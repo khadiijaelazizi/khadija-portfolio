@@ -1,0 +1,94 @@
+/* Shared: mobile menu, WhatsApp popup, mobile stats */
+.nav-burger{display:none}
+@media (max-width:900px){
+  header:has(nav){flex-wrap:nowrap!important;gap:12px!important}
+  header .brand{position:relative;z-index:80}
+  .nav-burger{position:relative;z-index:80;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:1px solid #EDE6EA;border-radius:50%;background:#FFFFFF;color:#0A0A0A;cursor:pointer;box-shadow:0 8px 20px rgba(120,20,60,.08);transition:background .3s,border-color .3s}
+  .nav-burger span{position:relative;display:block;width:18px;height:2px;border-radius:2px;background:currentColor;transition:background .2s}
+  .nav-burger span::before,.nav-burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;border-radius:2px;background:currentColor;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+  .nav-burger span::before{transform:translateY(-6px)}
+  .nav-burger span::after{transform:translateY(6px)}
+  body.nav-open .nav-burger{background:#0A0A0A;border-color:#0A0A0A;color:#FFFFFF}
+  body.nav-open .nav-burger span{background:transparent}
+  body.nav-open .nav-burger span::before{transform:rotate(45deg)}
+  body.nav-open .nav-burger span::after{transform:rotate(-45deg)}
+  body.nav-open{overflow:hidden}
+
+  header nav[aria-label="Main navigation"]{position:fixed!important;inset:0;z-index:75;display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important;gap:0!important;padding:104px 24px 28px;box-sizing:border-box;overflow-y:auto;background:radial-gradient(120% 60% at 100% 0%,#FBE9F0 0%,rgba(251,233,240,0) 60%),#F7F7F7;font-size:26px!important;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .3s,transform .4s cubic-bezier(.2,.7,.2,1),visibility .3s}
+  body.nav-open header nav[aria-label="Main navigation"]{opacity:1;visibility:visible;transform:none}
+  header nav[aria-label="Main navigation"]>a:not([href="contact.html"]),
+  header nav[aria-label="Main navigation"]>.nav-dd>a{display:block;padding:16px 0!important;border-bottom:0!important;font-size:30px;font-weight:600!important;letter-spacing:-0.03em;color:#0A0A0A!important}
+  header nav[aria-label="Main navigation"]>a[aria-current="page"],
+  header nav[aria-label="Main navigation"]>.nav-dd>a[aria-current="page"]{color:#C8336D!important}
+  header nav[aria-label="Main navigation"]>a:not([href="contact.html"]),
+  header nav[aria-label="Main navigation"]>.nav-dd{border-bottom:1px solid #EDE6EA!important}
+  header nav .nav-dd{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:space-between}
+  header nav .nav-dd>a{flex:1}
+  header nav .nav-dd-btn{width:40px;height:40px;border:1px solid #EDE6EA;background:#FFFFFF}
+  header nav .nav-dd:hover .nav-dd-btn{transform:none}
+  header nav .nav-dd.open .nav-dd-btn{transform:rotate(180deg);background:#0A0A0A;border-color:#0A0A0A;color:#FFFFFF}
+  header nav .nav-dd-menu,
+  header nav .nav-dd:hover .nav-dd-menu,
+  header nav .nav-dd:focus-within .nav-dd-menu{position:static!important;flex-basis:100%;width:auto;max-height:0;padding:0;margin:0;overflow:hidden;opacity:0;visibility:hidden;transform:none!important;border:0;box-shadow:none;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;font-size:15px;transition:max-height .45s cubic-bezier(.2,.7,.2,1),opacity .3s,padding .3s,visibility .3s}
+  header nav .nav-dd.open .nav-dd-menu{max-height:640px;padding:0 0 14px;opacity:1;visibility:visible}
+  header nav .nav-dd-menu::before{display:none}
+  header nav .nav-dd-item{padding:10px 8px;background:#FFFFFF;border:1px solid #EDE6EA;margin-bottom:8px}
+  header nav .nav-dd-all{border-top:0;padding:8px 8px 0}
+  header nav[aria-label="Main navigation"]>span{order:9;margin-top:auto;padding-top:28px;font-size:14px!important}
+  header nav[aria-label="Main navigation"]>a[href="contact.html"]{order:10;justify-content:center;margin-top:14px;min-height:56px!important;font-size:16px!important}
+  .nav-wa{order:11;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px;min-height:56px;border-radius:999px;border:1.5px solid #1FAF5A;color:#147A3F;font-size:16px;font-weight:500;text-decoration:none}
+}
+@media (min-width:901px){.nav-wa{display:none}}
+
+/* WhatsApp floating button + popup */
+.wa{position:fixed;right:20px;bottom:20px;z-index:90;font-family:'Geist','Helvetica Neue',sans-serif}
+.wa-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;padding:0;border:0;border-radius:50%;background:linear-gradient(145deg,#3BE07F 0%,#1FAF5A 60%,#128C4A 100%);color:#FFFFFF;cursor:pointer;box-shadow:0 14px 30px rgba(18,140,74,.35),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.wa-btn:hover{transform:scale(1.06)}
+.wa-btn::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #1FAF5A;animation:wa-pulse 2.4s ease-out infinite}
+@keyframes wa-pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+.wa-btn .wa-x{display:none}
+.wa.open .wa-btn .wa-ic{display:none}.wa.open .wa-btn .wa-x{display:block}.wa.open .wa-btn::after{display:none}
+.wa-badge{position:absolute;top:-2px;right:-2px;width:18px;height:18px;border-radius:50%;background:#C8336D;color:#FFFFFF;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #F7F7F7}
+.wa.open .wa-badge,.wa.seen .wa-badge{display:none}
+.wa-pop{position:absolute;right:0;bottom:76px;width:min(340px,calc(100vw - 40px));border-radius:24px;overflow:hidden;background:#FFFFFF;border:1px solid #EDE6EA;box-shadow:0 30px 70px rgba(10,10,10,.22);opacity:0;visibility:hidden;transform:translateY(12px) scale(.97);transform-origin:bottom right;transition:opacity .25s,transform .35s cubic-bezier(.2,.7,.2,1),visibility .25s}
+.wa.open .wa-pop{opacity:1;visibility:visible;transform:none}
+.wa-head{display:flex;align-items:center;gap:12px;padding:18px;background:#0A0A0A;color:#F7F7F7}
+.wa-av{position:relative;flex:none;width:44px;height:44px;border-radius:50%;overflow:hidden;background:#222}
+.wa-av img{width:100%;height:100%;object-fit:cover;display:block}
+.wa-av::after{content:"";position:absolute;right:1px;bottom:1px;width:11px;height:11px;border-radius:50%;background:#3BE07F;border:2px solid #0A0A0A}
+.wa-head b{display:block;font-size:15px;font-weight:600}
+.wa-head small{display:block;font-size:12px;color:#B9A9B1;margin-top:2px}
+.wa-body{padding:18px;background:#F4EFE9 radial-gradient(rgba(10,10,10,.035) 1px,transparent 1px) 0 0/14px 14px}
+.wa-msg{max-width:88%;padding:10px 14px;border-radius:4px 16px 16px 16px;background:#FFFFFF;font-size:14px;line-height:1.45;color:#0A0A0A;box-shadow:0 2px 6px rgba(10,10,10,.06)}
+.wa-msg small{display:block;margin-top:4px;text-align:right;font-size:10.5px;color:#988592}
+.wa-quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.wa-quick button{padding:7px 12px;border-radius:999px;border:1px solid #CFE9D9;background:#FFFFFF;color:#147A3F;font:500 12.5px 'Geist',sans-serif;cursor:pointer}
+.wa-quick button.on{background:#1FAF5A;border-color:#1FAF5A;color:#FFFFFF}
+.wa-go{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 18px 18px;padding:14px;border-radius:999px;background:#1FAF5A;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none}
+.wa-go:hover{background:#18994E}
+@media (max-width:640px){.wa{right:16px;bottom:16px}.wa-btn{width:56px;height:56px}}
+body.nav-open .wa{display:none}
+
+/* Stats: two per row on small screens */
+@media (max-width:640px){
+  .hstats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0 20px!important}
+  .hstats>div>span:first-child{font-size:34px!important}
+  .wi-stats{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 20px!important}
+}
+
+/* Dropdown watermark + featured item */
+.nav-dd-menu{overflow:hidden}
+.nav-dd-menu::after{content:attr(data-wm);position:absolute;right:-14px;bottom:-34px;z-index:0;font:800 150px/1 'Geist',sans-serif;letter-spacing:-0.06em;color:transparent;-webkit-text-stroke:1.5px rgba(200,51,109,.13);pointer-events:none}
+.nav-dd-menu>*{position:relative;z-index:1}
+.nav-dd-feat{background:linear-gradient(120deg,#FCE4EE,#FFF6F9)}
+.nav-dd-t b em{font-style:normal;margin-left:6px;padding:2px 7px;border-radius:999px;background:#0A0A0A;color:#FFFFFF;font-size:10.5px;font-weight:600;vertical-align:2px}
+@media (max-width:900px){
+  header nav[aria-label="Main navigation"]>a:not([href="contact.html"]),
+  header nav[aria-label="Main navigation"]>.nav-dd>a{font-size:20px!important;padding:14px 0!important;letter-spacing:-0.02em}
+  header nav .nav-dd-btn{width:34px;height:34px}
+  header nav .nav-dd-menu{position:relative!important;top:auto!important;left:auto!important;right:auto!important}
+  header nav .nav-dd-menu::after{font-size:110px;bottom:-20px;right:-6px}
+  header nav .nav-dd-t b{font-size:14px}
+  header nav .nav-dd-t small{font-size:12px}
+  header nav .nav-dd-label{font-size:10.5px}
+}

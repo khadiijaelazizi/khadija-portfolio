@@ -15,6 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
+:root{--wrap:1360px}
+@media (min-width:1600px){:root{--wrap:1680px}}
 body{margin:0;background:#F7F7F7}
 a{color:inherit}a:hover{color:#AE1C52}
 @keyframes kfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -255,7 +257,7 @@ a{color:inherit}a:hover{color:#AE1C52}
 .pj-meta{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6B5A64}
 .pj-lab{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#988592}
 .pj-h2{margin:0;font-family:'Geist','Helvetica Neue',sans-serif;font-size:clamp(30px,3vw,44px);font-weight:700;letter-spacing:-0.035em;line-height:1.05}
-.ct{max-width:1360px;margin:0 auto;box-sizing:border-box;padding:48px clamp(20px,4vw,56px) 40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,64px);align-items:start}
+.ct{max-width:var(--wrap);margin:0 auto;box-sizing:border-box;padding:48px clamp(20px,4vw,56px) 40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,64px);align-items:start}
 .ct-left{display:flex;flex-direction:column;gap:24px}
 .ct-avail{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:7px 14px;border-radius:999px;background:#FFFFFF;border:1px solid #EDE6EA;font-size:13px;color:#4A3F45}
 .ct-avail i{width:8px;height:8px;border-radius:50%;background:#C8336D;box-shadow:0 0 0 4px rgba(200,51,109,.15);animation:ctPulse 2s ease-in-out infinite}
@@ -295,7 +297,7 @@ a.ct-card:hover .ct-go{color:#C8336D;transform:translate(2px,-2px)}
 .ct-submit{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-top:6px}
 .ct-submit small{font-size:13px;color:#6B5A64}
 .ct-submit small a{color:#0A0A0A;border-bottom:1px solid #C8336D;text-decoration:none}
-.ct-next{max-width:1360px;margin:0 auto;box-sizing:border-box;padding:96px clamp(20px,4vw,56px) 96px}
+.ct-next{max-width:var(--wrap);margin:0 auto;box-sizing:border-box;padding:96px clamp(20px,4vw,56px) 96px}
 .ct-nh{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
 .ct-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .ct-step{display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:22px;background:#FFFFFF;border:1px solid #EDE6EA}
@@ -305,22 +307,39 @@ a.ct-card:hover .ct-go{color:#C8336D;transform:translate(2px,-2px)}
 @media (max-width:900px){.ct{grid-template-columns:1fr}.ct-steps{grid-template-columns:1fr}}
 @media (max-width:640px){.ct-cards,.ct-row{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.ct-avail i,.ct-veil{animation:none}}
-</style>
+header:has(.nav-dd){z-index:60!important}
+.nav-dd{position:relative;display:inline-flex;align-items:center;gap:2px}
+.nav-dd-btn{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;padding:0;border:0;border-radius:50%;background:none;color:inherit;cursor:pointer;transition:transform .3s,background .2s}
+.nav-dd-btn:hover{background:#F1E6EB}
+.nav-dd:hover .nav-dd-btn,.nav-dd.open .nav-dd-btn{transform:rotate(180deg)}
+.nav-dd-menu{position:absolute;z-index:50;top:calc(100% + 14px);left:50%;width:330px;box-sizing:border-box;padding:10px;border-radius:20px;background:rgba(255,255,255,.92);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid #EDE6EA;box-shadow:0 30px 60px rgba(120,20,60,.16);opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .25s,transform .3s cubic-bezier(.2,.7,.2,1),visibility .25s}
+.nav-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu,.nav-dd.open .nav-dd-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.nav-dd-label{display:block;padding:6px 12px 8px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B5A64}
+.nav-dd-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;text-decoration:none;color:#0A0A0A;transition:background .2s}
+.nav-dd-item:hover,.nav-dd-item[aria-current="page"]{background:#F6E3EA;color:#0A0A0A}
+.nav-dd-n{flex:none;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;color:#C8336D;background:#FFFFFF;border:1px solid rgba(200,51,109,.25)}
+.nav-dd-item[aria-current="page"] .nav-dd-n{color:#FFFFFF;background:#C8336D;border-color:#C8336D}
+.nav-dd-t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.nav-dd-t b{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-dd-t small{font-size:12px;color:#6B5A64}
+.nav-dd-all{display:flex;justify-content:space-between;align-items:center;margin-top:6px;padding:12px;border-top:1px solid #EDE6EA;font-size:13px;font-weight:500;text-decoration:none;color:#A3184E}
+.nav-dd-all:hover{color:#C8336D}
+@media (max-width:760px){.nav-dd-menu{position:fixed;left:16px;right:16px;top:auto;width:auto;transform:translateY(8px)}.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu,.nav-dd.open .nav-dd-menu{transform:none}}
+.brand{display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;color:#0A0A0A;line-height:1}.brand-word{font-family:"Geist",sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.06em;line-height:1;margin:0}.brand-word i{font-style:normal;color:#C8336D}.brand-top,.brand-bot{font-family:"Geist",sans-serif;font-size:7.5px;font-weight:600;letter-spacing:.42em;padding-left:.42em}.brand-top{align-self:flex-end;margin-right:2px;color:#C8336D}.brand-bot{letter-spacing:.5em;color:#6B5A64}@media (max-width:640px){.brand-word{font-size:30px}}</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <div style="width: 100%; background: #F7F7F7; color: #0A0A0A; font-family: 'Geist', 'Helvetica Neue', sans-serif; overflow-x: clip">
 
   <!-- NAV -->
-  <header style="max-width: 1360px; margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; position: relative; z-index: 5">
-    <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 16px; letter-spacing: -0.01em">
-      <span style="width: 32px; height: 32px; border-radius: 50%; background: #0A0A0A; color: #F7F7F7; display: inline-flex; align-items: center; justify-content: center; font-size: 12px">KE</span>
-      Khadija EL AZIZI
-    </a>
+  <header style="max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; position: relative; z-index: 5">
+    <a href="index.html" class="brand" aria-label="Khadija El Azizi, home"><span class="brand-word">khadija<i>.</i></span></a>
     <nav aria-label="Main navigation" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 15px">
       <a href="index.html" style="text-decoration: none; color: #4A3F45">Home</a>
       <a href="about.html" style="text-decoration: none; color: #4A3F45">About</a>
-      <a href="websites.html" style="text-decoration: none; color: #4A3F45">Websites</a>
-      <a href="seo.html" style="text-decoration: none; color: #4A3F45">SEO</a>
+      <div class="nav-dd"><a href="websites.html" style="text-decoration: none; color: #4A3F45">Websites</a><button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="nav-dd-menu" aria-label="Show recent websites"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button><div class="nav-dd-menu" id="nav-dd-menu" data-wm="WEB"><span class="nav-dd-label">Recent work · 2026</span><a class="nav-dd-item" href="deratihome.html"><span class="nav-dd-n">01</span><span class="nav-dd-t"><b>Deratihome</b><small>Pest control · Belgium</small></span></a><a class="nav-dd-item" href="talensio.html"><span class="nav-dd-n">02</span><span class="nav-dd-t"><b>Talensio</b><small>Certified training · Morocco</small></span></a><a class="nav-dd-item" href="institut-du-sein.html"><span class="nav-dd-n">03</span><span class="nav-dd-t"><b>Institut du Sein de Tanger</b><small>Medical clinic · Morocco</small></span></a><a class="nav-dd-item" href="store-access.html"><span class="nav-dd-n">04</span><span class="nav-dd-t"><b>Store Access</b><small>E-commerce · Morocco</small></span></a><a class="nav-dd-item" href="iptv-from-canada.html"><span class="nav-dd-n">05</span><span class="nav-dd-t"><b>IPTV from Canada</b><small>IPTV service · Canada</small></span></a><a class="nav-dd-all" href="websites.html">All websites <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></div>
+      <div class="nav-dd"><a href="seo.html" style="text-decoration: none; color: #4A3F45">SEO</a><button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="nav-dd-menu-seo" aria-label="Show SEO case studies"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button><div class="nav-dd-menu" id="nav-dd-menu-seo" data-wm="SEO"><span class="nav-dd-label">SEO case studies &middot; GSC data</span><a class="nav-dd-item nav-dd-feat" href="seo-mode-iptv.html"><span class="nav-dd-n">01</span><span class="nav-dd-t"><b>Mode IPTV <em>&#127464;&#127462; Featured</em></b><small>IPTV &middot; Canada &middot; &times;2.7</small></span></a><a class="nav-dd-item" href="seo-koop-iptv.html"><span class="nav-dd-n">02</span><span class="nav-dd-t"><b>Koop IPTV</b><small>IPTV &middot; Netherlands &middot; &times;30</small></span></a><a class="nav-dd-item" href="seo-telju-fitness.html"><span class="nav-dd-n">03</span><span class="nav-dd-t"><b>Telju Fitness</b><small>Sports equipment &middot; Morocco &middot; &times;142</small></span></a><a class="nav-dd-item" href="seo-maler-gsq.html"><span class="nav-dd-n">04</span><span class="nav-dd-t"><b>Maler GSQ</b><small>Painting &middot; Vienna &middot; &times;11.7</small></span></a><a class="nav-dd-item" href="seo-store-access.html"><span class="nav-dd-n">05</span><span class="nav-dd-t"><b>Store Access</b><small>E-commerce &middot; Morocco &middot; &times;2.2</small></span></a><a class="nav-dd-all" href="seo.html">All SEO case studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></div>
       <span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B5A64"><span style="color: #0A0A0A">EN</span> / FR</span>
       <a href="contact.html" aria-current="page" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #0A0A0A; color: #F7F7F7; font-weight: 500; font-size: 14px; box-shadow: 0 0 0 3px rgba(200, 51, 109, 0.35)">Let’s talk SEO</a>
     </nav>
@@ -365,11 +384,23 @@ a.ct-card:hover .ct-go{color:#C8336D;transform:translate(2px,-2px)}
     </div>
   </section>
 
-  <footer style="max-width: 1360px; margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px) 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #6B5A64">
+  <footer style="max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px) 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #6B5A64">
     <span>© 2026 Khadija EL AZIZI · SEO Specialist &amp; Web Designer</span>
     <span>Tangier, Morocco</span>
   </footer>
 </div>
 
+<script>
+(function(){
+  document.querySelectorAll('.nav-dd').forEach(function(dd){
+    var btn=dd.querySelector('.nav-dd-btn');
+    var menu=dd.querySelector('.nav-dd-menu');
+    btn.addEventListener('click',function(e){ e.stopPropagation(); var o=dd.classList.toggle('open'); btn.setAttribute('aria-expanded',o?'true':'false'); menu.style.top=innerWidth<=760?(dd.getBoundingClientRect().bottom+12)+'px':''; });
+    document.addEventListener('click',function(e){ if(!dd.contains(e.target)){ dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
+    dd.addEventListener('keydown',function(e){ if(e.key==='Escape'){ dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.focus(); } });
+  });
+})();
+</script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

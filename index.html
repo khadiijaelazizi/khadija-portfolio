@@ -15,6 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
+:root{--wrap:1360px}
+@media (min-width:1600px){:root{--wrap:1680px}}
 body{margin:0;background:#F7F7F7}
 a{color:inherit}a:hover{color:#AE1C52}
 @keyframes kfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -114,59 +116,56 @@ a{color:inherit}a:hover{color:#AE1C52}
 .gc-nav:hover{color:#C8336D;border-color:#C8336D;transform:translateY(-2px)}
 @media (max-width:760px){.gc-card,.gc-card:nth-child(even){transform:none}.gc-card{flex-basis:82vw}}
 @media (prefers-reduced-motion:reduce){.gc-card,.gc-card::after,.gc-media img{transition:none}}
-.bt{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:230px;gap:14px}
-.bt-card{position:relative;grid-column:span 3;border-radius:22px;overflow:hidden;isolation:isolate;text-decoration:none;color:#0A0A0A;background:#EFE7EB;box-shadow:0 18px 40px rgba(120,20,60,.09);transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s}
-.bt-card.bt-xl{grid-column:span 6;grid-row:span 2}
-.bt-card:hover,.bt-card:focus-visible{transform:translateY(-4px);box-shadow:0 30px 60px rgba(200,51,109,.22)}
-.bt-media{position:absolute;inset:0;z-index:0}
-.bt-media img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
-.bt-card:hover .bt-media img{transform:scale(1.05)}
-.bt-card::after{content:"";position:absolute;inset:0;z-index:4;background:linear-gradient(100deg,rgba(255,255,255,0) 35%,rgba(255,225,238,.55) 50%,rgba(255,255,255,0) 65%);background-size:260% 100%;background-position:130% 0;mix-blend-mode:screen;pointer-events:none;transition:background-position 1.2s cubic-bezier(.2,.7,.2,1)}
-.bt-card:hover::after{background-position:-30% 0}
-.bt-top{position:absolute;z-index:3;left:12px;right:12px;top:12px;display:flex;justify-content:space-between;align-items:flex-start;gap:6px}
-.bt-chip{padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);font-size:11px;font-weight:500;color:#0A0A0A}
-.bt-stat{padding:6px 11px;border-radius:999px;color:#FFFFFF;font-size:12px;font-weight:600;background:radial-gradient(130% 160% at 30% -10%,#F08AB2 0%,#D9437E 32%,#C8336D 55%,#A3184E 100%);box-shadow:inset 0 1px 1px rgba(255,255,255,.8),0 6px 16px rgba(200,51,109,.35)}
-.bt-panel{position:absolute;z-index:3;left:10px;right:10px;bottom:10px;display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.95);box-shadow:0 10px 26px rgba(60,10,30,.12)}
-.bt-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.bt-name{font-size:16px;font-weight:700;letter-spacing:-0.02em;line-height:1.2}
-.bt-xl .bt-name{font-size:clamp(22px,2.2vw,30px)}
-.bt-go{flex:none;width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#C8336D;border:1px solid rgba(200,51,109,.3);background:#FFFFFF;transform:rotate(-45deg);transition:all .45s cubic-bezier(.2,.7,.2,1)}
-.bt-xl .bt-go{width:40px;height:40px}
-.bt-card:hover .bt-go{transform:rotate(0);color:#FFFFFF;border-color:transparent;background:radial-gradient(130% 160% at 30% -10%,#F08AB2 0%,#D9437E 32%,#C8336D 55%,#A3184E 100%);box-shadow:inset 0 1px 1px rgba(255,255,255,.8),0 6px 16px rgba(200,51,109,.35)}
-.bt-desc{font-size:13px;line-height:1.45;color:#4A3F45;max-height:0;opacity:0;overflow:hidden;transition:max-height .5s cubic-bezier(.2,.7,.2,1),opacity .4s}
-.bt-card:hover .bt-desc,.bt-card:focus-visible .bt-desc{max-height:80px;opacity:1}
-.bt-xl .bt-desc{font-size:15px;max-height:none;opacity:1;max-width:520px}
-.bt-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px}
-.bt-loc{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#6B5A64}
-.bt-tags{display:flex;flex-wrap:wrap;gap:5px}
-.bt-tag{padding:3px 8px;border-radius:999px;background:#F6E3EA;color:#A3184E;font-size:10px;font-weight:500}
-.bt-more{display:flex;justify-content:center;padding-top:6px}
-.bt-toggle{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 22px;border-radius:999px;border:1.5px solid #C8336D;background:#FFFFFF;color:#A3184E;font:500 15px 'Geist',sans-serif;cursor:pointer;box-shadow:0 8px 22px rgba(200,51,109,.15);transition:all .25s}
-.bt-toggle:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(200,51,109,.25)}
-@media (max-width:1100px){.bt-card{grid-column:span 6}.bt-card.bt-xl{grid-column:span 12;grid-row:span 2}}
-@media (max-width:640px){.bt{grid-template-columns:1fr;grid-auto-rows:240px}.bt-card,.bt-card.bt-xl{grid-column:auto;grid-row:span 1}.bt-xl .bt-desc{display:none}}
-@media (prefers-reduced-motion:reduce){.bt-card,.bt-media img,.bt-card::after,.bt-desc{transition:none}}
-.bt{grid-auto-rows:auto}
-.bt-card{aspect-ratio:16/10}
-.bt-card.bt-xl{aspect-ratio:auto}
-.bt-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.04) 0%,rgba(10,10,10,.10) 55%,rgba(10,10,10,.26) 100%);pointer-events:none}
-.bt-card .bt-panel{background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);box-shadow:0 10px 30px rgba(20,5,12,.16)}
-.bt-card:not(.bt-xl) .bt-panel{padding:9px 12px;gap:4px;left:8px;right:8px;bottom:8px;border-radius:14px}
-.bt-card:not(.bt-xl) .bt-tags{display:none}
-.bt-card:not(.bt-xl) .bt-name{font-size:15px}
-.bt-card:not(.bt-xl) .bt-go{width:28px;height:28px}
-.bt-card:not(.bt-xl) .bt-top{left:10px;top:10px}
-.bt-card:hover .bt-desc{max-height:60px}
-@media (max-width:640px){.bt-card.bt-xl{aspect-ratio:4/3}}
-.bt{gap:22px}
-.bt-card:not(.bt-xl) .bt-top,.bt-card:not(.bt-xl) .bt-foot{opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s cubic-bezier(.2,.7,.2,1)}
-.bt-card:not(.bt-xl):hover .bt-top,.bt-card:not(.bt-xl):hover .bt-foot,.bt-card:not(.bt-xl):focus-visible .bt-top,.bt-card:not(.bt-xl):focus-visible .bt-foot{opacity:1;transform:none}
-.bt-card:not(.bt-xl) .bt-foot{max-height:0;overflow:hidden}
-.bt-card:not(.bt-xl):hover .bt-foot{max-height:30px}
-.bt-card:not(.bt-xl) .bt-panel{left:12px;right:auto;bottom:12px;max-width:calc(100% - 24px);padding:8px 8px 8px 14px;border-radius:999px}
-.bt-card:not(.bt-xl):hover .bt-panel{right:12px;border-radius:14px;padding:10px 12px}
-.bt-xl .bt-tags{display:none}
-.bt-xl .bt-chip{font-size:12px}
+.sc{--dur:9s;position:relative;display:flex;flex-direction:column;gap:clamp(28px,3vw,44px)}
+.sc-slides{display:grid}
+.sc-slide{grid-area:1/1;display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.6fr);gap:clamp(32px,4vw,72px);align-items:center;visibility:hidden;pointer-events:none}
+.sc-slide.on{visibility:visible;pointer-events:auto}
+.sc-info{display:flex;flex-direction:column;align-items:flex-start;gap:16px;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.sc-slide.on .sc-info{opacity:1;transform:none;transition-delay:.15s}
+.sc-num{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6B5A64}
+.sc-name{margin:0;font-size:clamp(34px,3.6vw,58px);font-weight:700;letter-spacing:-0.04em;line-height:1.02}
+.sc-desc{margin:0;font-size:16px;line-height:1.6;color:#4A3F45;max-width:460px}
+.sc-loc{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#6B5A64}
+.sc-tags{display:flex;flex-wrap:wrap;gap:6px}
+.sc-tag{padding:5px 11px;border-radius:999px;background:#F6E3EA;color:#A3184E;font-size:12px;font-weight:500}
+.sc-cta{display:inline-flex;align-items:center;gap:12px;min-height:50px;padding:0 24px;margin-top:6px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;color:#FFFFFF}
+.sc-devices{position:relative;padding:0 9% 9% 0}
+.sc-laptop{display:block;border-radius:18px;overflow:hidden;background:#FFFFFF;border:1px solid #EDE6EA;box-shadow:0 40px 80px rgba(120,20,60,.14);opacity:0;transform:translateX(-48px) scale(.97);transition:opacity .7s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.sc-slide.on .sc-laptop{opacity:1;transform:none}
+.sc-chrome{display:flex;align-items:center;gap:6px;height:34px;padding:0 14px;background:#F6F1F3;border-bottom:1px solid #EDE6EA}
+.sc-chrome i{width:9px;height:9px;border-radius:50%;background:#E2D6DC}
+.sc-chrome i:first-child{background:#F08AB2}
+.sc-url{margin-left:10px;height:20px;padding:0 12px;border-radius:999px;background:#FFFFFF;border:1px solid #EDE6EA;font:400 11px/20px 'Geist Mono',monospace;color:#6B5A64;white-space:nowrap}
+.sc-screen{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#F4F0F2}
+.sc-screen img,.sc-pscreen img{position:absolute;left:0;top:0;width:100%;height:auto;min-height:100%;object-fit:cover;object-position:top;display:block}
+.sc-stat{position:absolute;z-index:2;top:12px;right:12px;padding:6px 11px;border-radius:999px;color:#FFFFFF;font-size:12px;font-weight:600;background:radial-gradient(130% 160% at 30% -10%,#F08AB2 0%,#D9437E 32%,#C8336D 55%,#A3184E 100%);box-shadow:inset 0 1px 1px rgba(255,255,255,.8),0 6px 16px rgba(200,51,109,.35)}
+.sc-phone{position:absolute;z-index:3;width:21%;aspect-ratio:390/844;padding:7px;box-sizing:content-box;border-radius:34px;background:linear-gradient(145deg,#2B2B2E,#0A0A0A);box-shadow:0 0 0 1.5px #3A3A3D inset,0 30px 60px rgba(60,10,30,.28);opacity:0;transform:translateY(70px);transition:opacity .6s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.sc-ph1{right:20.5%;bottom:0}
+.sc-ph2{right:0;bottom:9%}
+.sc-slide.on .sc-ph1{opacity:1;transform:none;transition-delay:.3s}
+.sc-slide.on .sc-ph2{opacity:1;transform:none;transition-delay:.48s}
+.sc-pscreen{position:relative;display:block;width:100%;height:100%;border-radius:27px;overflow:hidden;background:#000}
+.sc-island{position:absolute;z-index:2;top:7px;left:50%;transform:translateX(-50%);width:32%;height:14px;border-radius:999px;background:#000}
+@keyframes scroll-y{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(var(--shift,0px))}}
+.sc-slide.on .sc-roll{animation:scroll-y var(--dur) cubic-bezier(.45,.05,.35,1) both}
+
+.sc-bar{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.sc-tabs{flex:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.sc-tab{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:0;border:0;background:none;cursor:pointer;text-align:left;font:inherit;color:#6B5A64;transition:color .25s}
+.sc-tab:hover,.sc-tab.on{color:#0A0A0A}
+.sc-tab-n{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em}
+.sc-tab-name{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.sc-prog{display:block;width:100%;height:3px;border-radius:3px;background:#E6DDE2;overflow:hidden}
+.sc-prog span{display:block;height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,#F08AB2,#C8336D)}
+.sc-tab.done .sc-prog span{width:100%}
+@keyframes sc-fill{from{width:0}to{width:100%}}
+.sc-tab.on .sc-prog span{animation:sc-fill var(--dur) linear forwards}
+.sc.paused .sc-slide.on .sc-roll,.sc.paused .sc-tab.on .sc-prog span{animation-play-state:paused}
+.sc-nav{display:flex;gap:10px}
+.sc-arrow{width:50px;height:50px;border-radius:50%;border:1px solid rgba(200,51,109,.25);background:#FFFFFF;color:#0A0A0A;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s}
+.sc-arrow:hover{color:#FFFFFF;background:#C8336D;border-color:#C8336D}
+@media (max-width:900px){.sc-slide{grid-template-columns:minmax(0,1fr)}.sc-info{order:2}.sc-tabs{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.sc-tab-name{display:none}.sc-nav{display:none}}
+@media (prefers-reduced-motion:reduce){.sc-info,.sc-laptop,.sc-phone{transition:none;opacity:1;transform:none}.sc-slide.on .sc-roll{animation:none}.sc-tab.on .sc-prog span{animation:none;width:100%}}
 @keyframes fa1{0%,100%{transform:translate(0,0)}50%{transform:translate(6px,-12px)}}
 @keyframes fa2{0%,100%{transform:translate(0,0)}50%{transform:translate(-8px,-9px)}}
 @keyframes fa3{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,10px)}}
@@ -249,22 +248,58 @@ a{color:inherit}a:hover{color:#AE1C52}
 @media (max-width:1000px){.sv-row{grid-template-columns:48px 1fr 44px;row-gap:10px}.sv-desc,.sv-tags{grid-column:2 / 3}.sv-go{grid-row:1;grid-column:3}}
 .glass{backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%)}
 @media (max-width:760px){.hide-sm{display:none !important}.bento > *{grid-column:span 6 !important}}
-</style>
+header:has(.nav-dd){z-index:60!important}
+.nav-dd{position:relative;display:inline-flex;align-items:center;gap:2px}
+.nav-dd-btn{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;padding:0;border:0;border-radius:50%;background:none;color:inherit;cursor:pointer;transition:transform .3s,background .2s}
+.nav-dd-btn:hover{background:#F1E6EB}
+.nav-dd:hover .nav-dd-btn,.nav-dd.open .nav-dd-btn{transform:rotate(180deg)}
+.nav-dd-menu{position:absolute;z-index:50;top:calc(100% + 14px);left:50%;width:330px;box-sizing:border-box;padding:10px;border-radius:20px;background:rgba(255,255,255,.92);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid #EDE6EA;box-shadow:0 30px 60px rgba(120,20,60,.16);opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .25s,transform .3s cubic-bezier(.2,.7,.2,1),visibility .25s}
+.nav-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu,.nav-dd.open .nav-dd-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.nav-dd-label{display:block;padding:6px 12px 8px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B5A64}
+.nav-dd-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;text-decoration:none;color:#0A0A0A;transition:background .2s}
+.nav-dd-item:hover,.nav-dd-item[aria-current="page"]{background:#F6E3EA;color:#0A0A0A}
+.nav-dd-n{flex:none;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;color:#C8336D;background:#FFFFFF;border:1px solid rgba(200,51,109,.25)}
+.nav-dd-item[aria-current="page"] .nav-dd-n{color:#FFFFFF;background:#C8336D;border-color:#C8336D}
+.nav-dd-t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.nav-dd-t b{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-dd-t small{font-size:12px;color:#6B5A64}
+.nav-dd-all{display:flex;justify-content:space-between;align-items:center;margin-top:6px;padding:12px;border-top:1px solid #EDE6EA;font-size:13px;font-weight:500;text-decoration:none;color:#A3184E}
+.nav-dd-all:hover{color:#C8336D}
+@media (max-width:760px){.nav-dd-menu{position:fixed;left:16px;right:16px;top:auto;width:auto;transform:translateY(8px)}.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu,.nav-dd.open .nav-dd-menu{transform:none}}
+.bx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.bx-card{display:flex;flex-direction:column;gap:12px;padding:26px;border-radius:24px;background:#FFFFFF;border:1px solid #EDE6EA;box-shadow:0 18px 40px rgba(120,20,60,.06);text-decoration:none;color:#0A0A0A;transition:transform .35s,box-shadow .35s,border-color .35s}
+.bx-card:hover{transform:translateY(-4px);border-color:#E9C9D6;box-shadow:0 24px 50px rgba(120,20,60,.12)}
+.bx-top{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:40px}
+.bx-logo img{display:block;width:auto;max-width:150px}
+.bx-name{font-size:20px;font-weight:700;letter-spacing:-0.02em}
+.bx-x{padding:6px 12px;border-radius:999px;color:#FFFFFF;font-size:13px;font-weight:700;white-space:nowrap;background:radial-gradient(130% 160% at 30% -10%,#F08AB2 0%,#D9437E 32%,#C8336D 55%,#A3184E 100%)}
+.bx-meta{font-size:12px;color:#6B5A64}
+.bx-lab{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#988592;margin-top:6px}
+.bx-ba{display:grid;grid-template-columns:minmax(0,.8fr) auto minmax(0,1.2fr);align-items:end;gap:12px;padding:16px;border-radius:18px;background:#FAF6F8}
+.bx-ba small{display:block;font-size:11px;color:#6B5A64;margin-bottom:6px;white-space:nowrap}
+.bx-b b{font-size:clamp(26px,2.4vw,34px);font-weight:700;letter-spacing:-0.04em;line-height:1;color:#B3A3AB}
+.bx-a b{font-size:clamp(34px,3.2vw,48px);font-weight:700;letter-spacing:-0.05em;line-height:1;background:linear-gradient(135deg,#F08AB2 0%,#C8336D 55%,#A3184E 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bx-arr{color:#C8336D;padding-bottom:6px}
+.bx-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:6px;font-size:13px;color:#4A3F45}
+.bx-go{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#C8336D;white-space:nowrap}
+.bx-all{background:#0A0A0A;border-color:#0A0A0A;justify-content:space-between}
+.bx-all-t{font-size:clamp(22px,2vw,28px);letter-spacing:-0.03em;line-height:1.2;color:#F7F7F7}
+@media (max-width:1100px){.bx{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.bx{grid-template-columns:minmax(0,1fr)}}.brand{display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;color:#0A0A0A;line-height:1}.brand-word{font-family:"Geist",sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.06em;line-height:1;margin:0}.brand-word i{font-style:normal;color:#C8336D}.brand-top,.brand-bot{font-family:"Geist",sans-serif;font-size:7.5px;font-weight:600;letter-spacing:.42em;padding-left:.42em}.brand-top{align-self:flex-end;margin-right:2px;color:#C8336D}.brand-bot{letter-spacing:.5em;color:#6B5A64}@media (max-width:640px){.brand-word{font-size:30px}}.bx-feat{grid-column:span 2;background:radial-gradient(120% 140% at 100% 0%,#FCE4EE 0%,#FFFFFF 55%);border-color:#E9C9D6}.bx-flag{align-self:flex-start;padding:6px 12px;border-radius:999px;background:#0A0A0A;color:#FFFFFF;font-size:12px;font-weight:600}.bx-feat .bx-a b{font-size:clamp(40px,4vw,60px)}.bx-kw{display:flex;flex-wrap:wrap;gap:8px}.bx-kw span{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:#FFFFFF;border:1px solid #EDE6EA;font-size:13px}.bx-kw b{font-weight:600}.bx-kw i{font-style:normal;font-family:"Geist Mono",monospace;font-size:11.5px;color:#C8336D}.bx-all{grid-column:1/-1;flex-direction:row!important;flex-wrap:wrap;align-items:center}@media (max-width:640px){.bx-feat{grid-column:auto}}.mq-lead{display:inline-flex;align-items:center;padding:4px 14px;border-radius:999px;background:#C8336D;color:#FFFFFF;font-weight:600;font-size:15px}@media (min-width:1921px){.hero-stage{max-width:none!important;max-height:max(620px,calc(100vh - 140px))}.hero-word{font-size:min(15.5cqw,30vh)!important}}</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<div style="width: 100%; background: #F7F7F7; color: #0A0A0A; font-family: 'Geist', 'Helvetica Neue', sans-serif; overflow: hidden">
+<div style="width: 100%; background: #F7F7F7; color: #0A0A0A; font-family: 'Geist', 'Helvetica Neue', sans-serif; overflow: hidden; overflow: clip">
 
   <!-- NAV -->
-  <header style="max-width: 1360px; margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; position: relative; z-index: 5">
-    <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 16px; letter-spacing: -0.01em">
-      <span style="width: 32px; height: 32px; border-radius: 50%; background: #0A0A0A; color: #F7F7F7; display: inline-flex; align-items: center; justify-content: center; font-size: 12px">KE</span>
-      Khadija EL AZIZI
-    </a>
+  <header style="max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; position: relative; z-index: 5">
+    <a href="index.html" class="brand" aria-label="Khadija El Azizi, home"><span class="brand-word">khadija<i>.</i></span></a>
     <nav aria-label="Main navigation" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 15px">
       <a href="index.html" aria-current="page" style="text-decoration: none; color: #0A0A0A; font-weight: 500; border-bottom: 2px solid #C8336D; padding-bottom: 2px">Home</a>
       <a href="about.html" style="text-decoration: none; color: #4A3F45">About</a>
-      <a href="websites.html" style="text-decoration: none; color: #4A3F45">Websites</a>
-      <a href="seo.html" style="text-decoration: none; color: #4A3F45">SEO</a>
+      <div class="nav-dd"><a href="websites.html" style="text-decoration: none; color: #4A3F45">Websites</a><button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="nav-dd-menu" aria-label="Show recent websites"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button><div class="nav-dd-menu" id="nav-dd-menu" data-wm="WEB"><span class="nav-dd-label">Recent work · 2026</span><a class="nav-dd-item" href="deratihome.html"><span class="nav-dd-n">01</span><span class="nav-dd-t"><b>Deratihome</b><small>Pest control · Belgium</small></span></a><a class="nav-dd-item" href="talensio.html"><span class="nav-dd-n">02</span><span class="nav-dd-t"><b>Talensio</b><small>Certified training · Morocco</small></span></a><a class="nav-dd-item" href="institut-du-sein.html"><span class="nav-dd-n">03</span><span class="nav-dd-t"><b>Institut du Sein de Tanger</b><small>Medical clinic · Morocco</small></span></a><a class="nav-dd-item" href="store-access.html"><span class="nav-dd-n">04</span><span class="nav-dd-t"><b>Store Access</b><small>E-commerce · Morocco</small></span></a><a class="nav-dd-item" href="iptv-from-canada.html"><span class="nav-dd-n">05</span><span class="nav-dd-t"><b>IPTV from Canada</b><small>IPTV service · Canada</small></span></a><a class="nav-dd-all" href="websites.html">All websites <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></div>
+      <div class="nav-dd"><a href="seo.html" style="text-decoration: none; color: #4A3F45">SEO</a><button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="nav-dd-menu-seo" aria-label="Show SEO case studies"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button><div class="nav-dd-menu" id="nav-dd-menu-seo" data-wm="SEO"><span class="nav-dd-label">SEO case studies &middot; GSC data</span><a class="nav-dd-item nav-dd-feat" href="seo-mode-iptv.html"><span class="nav-dd-n">01</span><span class="nav-dd-t"><b>Mode IPTV <em>&#127464;&#127462; Featured</em></b><small>IPTV &middot; Canada &middot; &times;2.7</small></span></a><a class="nav-dd-item" href="seo-koop-iptv.html"><span class="nav-dd-n">02</span><span class="nav-dd-t"><b>Koop IPTV</b><small>IPTV &middot; Netherlands &middot; &times;30</small></span></a><a class="nav-dd-item" href="seo-telju-fitness.html"><span class="nav-dd-n">03</span><span class="nav-dd-t"><b>Telju Fitness</b><small>Sports equipment &middot; Morocco &middot; &times;142</small></span></a><a class="nav-dd-item" href="seo-maler-gsq.html"><span class="nav-dd-n">04</span><span class="nav-dd-t"><b>Maler GSQ</b><small>Painting &middot; Vienna &middot; &times;11.7</small></span></a><a class="nav-dd-item" href="seo-store-access.html"><span class="nav-dd-n">05</span><span class="nav-dd-t"><b>Store Access</b><small>E-commerce &middot; Morocco &middot; &times;2.2</small></span></a><a class="nav-dd-all" href="seo.html">All SEO case studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></div>
       <span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B5A64"><span style="color: #0A0A0A">EN</span> / FR</span>
       <a href="contact.html" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #0A0A0A; color: #F7F7F7; font-weight: 500; font-size: 14px">Let’s talk SEO</a>
     </nav>
@@ -272,11 +307,7 @@ a{color:inherit}a:hover{color:#AE1C52}
 
   <!-- HERO -->
   <section id="top" style="padding-bottom: 72px">
-    <div style="max-width: 1360px; margin: 0 auto; box-sizing: border-box; padding: 8px clamp(20px, 4vw, 56px) 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
-      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: #4A3F45"><span style="width: 8px; height: 8px; border-radius: 50%; background: #AE1C52"></span>Available for new projects</span>
-    </div>
-
-    <div class="hero-stage" style="position: relative; width: 100%; max-width: 1600px; margin: -24px auto 0; aspect-ratio: 2 / 1">
+<div class="hero-stage" style="position: relative; width: 100%; max-width: max(1600px, calc(var(--wrap) + 240px)); margin: 0 auto 0; aspect-ratio: 2 / 1">
       <div class="float" style="position: absolute; top: -25%; right: 0; bottom: 0; left: 0; z-index: 1">
         <img src="assets/img/veil-back.webp" alt="" style="width: 100%; height: 100%; display: block">
         <div class="sheen sheen-back"></div>
@@ -291,10 +322,10 @@ a{color:inherit}a:hover{color:#AE1C52}
       <!-- floating ideas -->
       <div class="fl fl-near fa1 hide-sm" style="left: 9%; top: 20%"><span class="fl-dot"></span><b>SEO Specialist</b></div>
       <div class="fl fl-near fa2 hide-sm" style="right: 7%; top: 62%"><span class="fl-dot"></span><b>Web Designer &amp; Developer</b></div>
-      <div class="fl fl-near fa3 hide-sm" style="right: 11%; top: 14%"><span class="fl-label">Google ranking</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B5A64" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><b>iptv canada</b><span class="fl-rank">#1</span></div>
-      <div class="fl fl-near fa2 hide-sm" style="left: 7%; top: 68%"><span class="fl-label">Organic traffic</span><b>×15</b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2F8F5B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></div>
-      <div class="fl fl-mid fa1 hide-sm" style="left: 26%; top: 7%"><span class="fl-label">Avg. position</span><b>40 → 7</b></div>
-      <div class="fl fl-mid fa3 hide-sm" style="right: 27%; top: 84%"><span class="fl-label">Top-10 keywords</span><b>3,500+</b></div>
+      <div class="fl fl-near fa3 hide-sm" style="right: 11%; top: 14%"><span class="fl-label">Google ranking</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B5A64" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><b>mode iptv canada</b><span class="fl-rank">#1</span></div>
+      <div class="fl fl-near fa2 hide-sm" style="left: 7%; top: 68%"><span class="fl-label">Organic clicks</span><b>×30</b><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2F8F5B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></div>
+      <div class="fl fl-mid fa1 hide-sm" style="left: 26%; top: 7%"><span class="fl-label">Avg. position</span><b>41.6 → 8.6</b></div>
+      <div class="fl fl-mid fa3 hide-sm" style="right: 27%; top: 84%"><span class="fl-label">Top-10 queries</span><b>3,200+</b></div>
       <div class="fl fl-far fa2 hide-sm" style="left: 1.5%; top: 44%"><b>Ahrefs</b></div>
       <div class="fl fl-far fa1 hide-sm" style="right: 1.5%; top: 40%"><b>Local SEO</b></div>
       <div class="fl fl-far fa3 hide-sm" style="left: 36%; top: 89%"><b>WordPress</b></div>
@@ -302,9 +333,9 @@ a{color:inherit}a:hover{color:#AE1C52}
       <div class="fl fl-far fa1 hide-sm" style="left: 15%; top: 88%"><b>Core Web Vitals</b></div>
     </div>
 
-    <div style="max-width: 1360px; margin: -8px auto 0; box-sizing: border-box; padding: 0 clamp(20px, 4vw, 56px); position: relative; z-index: 5">
+    <div style="max-width: var(--wrap); margin: -8px auto 0; box-sizing: border-box; padding: 0 clamp(20px, 4vw, 56px); position: relative; z-index: 5">
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 28px">
-        <p style="margin: 0; max-width: 620px; font-size: clamp(20px, 1.8vw, 24px); font-weight: 500; line-height: 1.4; letter-spacing: -0.015em; color: #0A0A0A">I make brands visible where their customers are searching, <span style="color: #C8336D">without ads, with results that last.</span></p>
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px"><span style="display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#FFFFFF;border:1px solid #EDE6EA;font-size:13px;font-weight:500;color:#4A3F45"><span style="width:8px;height:8px;border-radius:50%;background:#2F8F5B;box-shadow:0 0 0 4px rgba(47,143,91,.15)"></span>SEO Specialist &amp; Web Designer &middot; available for new projects</span><p style="margin: 0; max-width: 620px; font-size: clamp(20px, 1.8vw, 24px); font-weight: 500; line-height: 1.4; letter-spacing: -0.015em; color: #0A0A0A">I design and build websites, then grow them on Google: <span style="color: #C8336D">fast WordPress sites and SEO that brings real clients.</span></p></div>
         <div style="display: flex; flex-wrap: wrap; gap: 10px">
           <a class="btn-gloss" href="seo.html" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; color: #FFFFFF; font-weight: 500; font-size: 15px">View case studies
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
@@ -314,11 +345,11 @@ a{color:inherit}a:hover{color:#AE1C52}
           </a>
         </div>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 32px; margin-top: 48px; border-top: 1px solid #E2DCE0">
-        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 22px"><span style="font-size: 40px; font-weight: 500; letter-spacing: -0.04em; line-height: 1">×15</span><span style="font-size: 14px; color: #6B5A64">Best organic traffic growth</span></div>
-        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 22px"><span style="font-size: 40px; font-weight: 500; letter-spacing: -0.04em; line-height: 1">3,500+</span><span style="font-size: 14px; color: #6B5A64">Top-10 keywords won</span></div>
-        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 22px"><span style="font-size: 40px; font-weight: 500; letter-spacing: -0.04em; line-height: 1">8</span><span style="font-size: 14px; color: #6B5A64">Documented case studies</span></div>
-        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 22px"><span style="font-size: 40px; font-weight: 500; letter-spacing: -0.04em; line-height: 1">3</span><span style="font-size: 14px; color: #6B5A64">Markets: Morocco, Belgium, Austria</span></div>
+      <div class="hstats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 32px; margin-top: 48px; border-top: 1px solid #E2DCE0">
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 22px"><span style="font-size: 40px; font-weight: 500; letter-spacing: -0.04em; line-height: 1">×30</span><span style="font-size: 14px; color: #6B5A64">Best monthly click growth (Koop IPTV)</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 22px"><span style="font-size: 40px; font-weight: 500; letter-spacing: -0.04em; line-height: 1">3,200+</span><span style="font-size: 14px; color: #6B5A64">Queries in Google&rsquo;s top 10</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 22px"><span style="font-size: 40px; font-weight: 500; letter-spacing: -0.04em; line-height: 1">5</span><span style="font-size: 14px; color: #6B5A64">SEO case studies with GSC data</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 22px"><span style="font-size: 40px; font-weight: 500; letter-spacing: -0.04em; line-height: 1">4</span><span style="font-size: 14px; color: #6B5A64">Markets: Morocco, Austria, Canada, Netherlands</span></div>
       </div>
     </div>
   </section>
@@ -327,7 +358,7 @@ a{color:inherit}a:hover{color:#AE1C52}
   
 
   <!-- 02 WEBSITES -->
-  <section id="about" style="position: relative; max-width: 1360px; margin: 0 auto; box-sizing: border-box; padding: 128px clamp(20px, 4vw, 56px) 136px">
+  <section id="about" style="position: relative; max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; padding: 128px clamp(20px, 4vw, 56px) 136px">
     <div class="wm wm-about" aria-hidden="true"><span class="wm-word">Hello</span><span class="wm-ring"></span></div>
     <div style="display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 64px); align-items: stretch; justify-content: center">
       <div class="home-stage" style="flex: 0 1 460px; min-width: 280px; position: relative; padding: 32px 0; margin-top: 10px; display: flex; justify-content: center; align-items: flex-start">
@@ -335,17 +366,17 @@ a{color:inherit}a:hover{color:#AE1C52}
           <img src="assets/img/khadija-el-azizi.jpg" alt="Portrait of Khadija EL AZIZI" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
         </div>
         <div class="fl fl-far fa2" style="right: 2%; top: 2%">WordPress · Elementor</div>
-        <div class="fl fl-near fa1" style="left: -2%; top: 18%"><span class="fl-dot"></span><b>3,500+ top-10 keywords</b></div>
+        <div class="fl fl-near fa1" style="left: -2%; top: 18%"><span class="fl-dot"></span><b>3,200+ top-10 queries</b></div>
         <div class="fl fl-near fa2" style="right: -6%; top: 36%"><span class="fl-dot"></span><b>Bilingual · EN / FR</b></div>
-        <div class="fl fl-mid fa3" style="left: -4%; top: 60%"><span class="fl-label">Clients in</span><b>Canada · France · USA</b></div>
+        <div class="fl fl-mid fa3" style="left: -4%; top: 60%"><span class="fl-label">Clients in</span><b>Canada · Netherlands · Austria</b></div>
         <div class="fl fl-near fa3" style="right: -4%; top: 74%"><span class="fl-dot"></span><b>Buyer-first content</b></div>
         <div class="fl fl-far fa1" style="left: 12%; bottom: 0">Ahrefs · SEMrush</div>
       </div>
       <div style="flex: 1 1 420px; display: flex; flex-direction: column; justify-content: flex-start; gap: 24px; max-width: 660px">
         <span style="font-family: 'Geist Mono', monospace; font-size: 12px; line-height: 18px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B5A64">01 — About</span>
         <h2 style="margin: 0; font-family: 'Geist', 'Helvetica Neue', sans-serif; font-size: clamp(40px, 4.8vw, 68px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05">Hello, I’m <span style="color: #C8336D">Khadija</span>.</h2>
-        <p style="margin: 0; max-width: 620px; font-size: clamp(20px, 1.8vw, 24px); font-weight: 500; line-height: 1.4; letter-spacing: -0.015em; color: #0A0A0A">I start by understanding <span style="color: #C8336D">how people search</span>. <span style="color: #6B5A64">Then I structure, write and measure until your brand ranks.</span></p>
-        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A3F45">SEO Specialist &amp; Project Manager at Rimas Digital, working with clients in Canada, France, Belgium, Austria and Morocco. 7+ years across marketing, content and customer relations. Fluent in English and French.</p>
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px"><span style="display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#FFFFFF;border:1px solid #EDE6EA;font-size:13px;font-weight:500;color:#4A3F45"><span style="width:8px;height:8px;border-radius:50%;background:#2F8F5B;box-shadow:0 0 0 4px rgba(47,143,91,.15)"></span>SEO Specialist &amp; Web Designer &middot; available for new projects</span><p style="margin: 0; max-width: 620px; font-size: clamp(20px, 1.8vw, 24px); font-weight: 500; line-height: 1.4; letter-spacing: -0.015em; color: #0A0A0A">I start by understanding <span style="color: #C8336D">how people search</span>. <span style="color: #6B5A64">Then I structure, write and measure until your brand ranks.</span></p>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A3F45">SEO Specialist &amp; Project Manager at Rimas Digital, working with clients in Canada, the Netherlands, Belgium, Austria and Morocco. 8+ years across marketing, content and customer relations. Fluent in English and French.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 8px">
           <span style="padding: 8px 14px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E2DCE0; font-size: 13px">Search Console</span>
           <span style="padding: 8px 14px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E2DCE0; font-size: 13px">GA4</span>
@@ -360,252 +391,127 @@ a{color:inherit}a:hover{color:#AE1C52}
         </a>
       </div>
     </div>
-  </section><section id="websites" style="position: relative; max-width: 1360px; margin: 0 auto; box-sizing: border-box; padding: 0 clamp(20px, 4vw, 56px) 136px; display: flex; flex-direction: column; gap: 40px">
+  </section><section id="websites" style="position: relative; max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; padding: 0 clamp(20px, 4vw, 56px) 136px; display: flex; flex-direction: column; gap: 40px">
     <div class="wm" aria-hidden="true"><span class="wm-word">WEB</span><span class="wm-ring"></span></div>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
       <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px">
-        <span style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B5A64">02 — Websites</span>
-        <h2 style="margin: 0; font-family: 'Geist', 'Helvetica Neue', sans-serif; font-size: clamp(40px, 4.8vw, 68px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; width: 981px">Websites I’ve built, <span style="color: rgb(107, 90, 100)">fast and <span style="color: rgb(200, 51, 109)">made to rank</span>.</span></h2>
+        <span style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B5A64">02 — Recent work · 2026</span>
+        <h2 style="margin: 0; font-family: 'Geist', 'Helvetica Neue', sans-serif; font-size: clamp(40px, 4.8vw, 68px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; width: min(981px, 100%)">Recent work, <span style="color: rgb(107, 90, 100)">built in <span style="color: rgb(200, 51, 109)">2026</span>.</span></h2>
       </div>
-      <p style="margin: 0; max-width: 400px; font-size: 16px; line-height: 1.6; color: #4A3F45">WordPress, WooCommerce and Elementor, built faster with AI tools like Claude Code.</p>
+      <p style="margin: 0; max-width: 400px; font-size: 16px; line-height: 1.6; color: #4A3F45">My latest WordPress, WooCommerce and Elementor websites, fast, made to rank and built with AI tools like Claude Code.</p>
     </div>
 
-<!-- bento mosaic -->
-    <div class="bt">
-      
-        <a class="bt-card bt-xl" href="https://www.deratihome.be/" target="_blank" rel="nofollow noopener noreferrer">
-          <span class="bt-media"><img src="assets/img/card-deratihome.webp" alt="Deratihome homepage" loading="lazy"></span>
-          <span class="bt-top">
-            <span class="bt-chip glass">01 · Pest control</span>
-            
-          </span>
-          <span class="bt-panel glass">
-            <span class="bt-head"><span class="bt-name">Deratihome</span><span class="bt-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-            <span class="bt-desc" style="color: #0a0a0a">Pest control website for Brussels: urgent quote form, a page per pest, intervention map and Google reviews, designed to turn local searches into calls.</span>
-            <span class="bt-foot">
-              <span class="bt-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Brussels, Belgium</span>
-              <span class="bt-tags"><span class="bt-tag">Lead generation</span><span class="bt-tag">Local SEO</span></span>
-            </span>
-          </span>
-        </a>
-      
-        <a class="bt-card bt-m" href="https://storeaccess.ma/" target="_blank" rel="nofollow noopener noreferrer">
-          <span class="bt-media"><img src="assets/img/card-store-access.webp" alt="Store Access homepage" loading="lazy"></span>
-          <span class="bt-top">
-            <span class="bt-chip glass">02 · E-commerce</span>
-            <span class="bt-stat">×15 organic traffic</span>
-          </span>
-          <span class="bt-panel glass">
-            <span class="bt-head"><span class="bt-name">Store Access</span><span class="bt-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-            <span class="bt-desc" style="color: #0a0a0a">WooCommerce store for pro equipment, grown from zero authority to 703 top-10 keywords in 12 months.</span>
-            <span class="bt-foot">
-              <span class="bt-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Morocco</span>
-              <span class="bt-tags"><span class="bt-tag">WooCommerce</span><span class="bt-tag">SEO</span></span>
-            </span>
-          </span>
-        </a>
-      
-        <a class="bt-card bt-m" href="https://quebeciptv.ca/" target="_blank" rel="nofollow noopener noreferrer">
-          <span class="bt-media"><img src="assets/img/card-quebec-iptv.webp" alt="Québec IPTV homepage" loading="lazy"></span>
-          <span class="bt-top">
-            <span class="bt-chip glass">03 · IPTV service</span>
-            
-          </span>
-          <span class="bt-panel glass">
-            <span class="bt-head"><span class="bt-name">Québec IPTV</span><span class="bt-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-            <span class="bt-desc" style="color: #0a0a0a">French-language IPTV site with subscription plans, setup guides and a full channel list.</span>
-            <span class="bt-foot">
-              <span class="bt-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Québec, Canada</span>
-              <span class="bt-tags"><span class="bt-tag">Web design</span><span class="bt-tag">SEO</span></span>
-            </span>
-          </span>
-        </a>
-      
-        <a class="bt-card bt-m" href="https://institutduseintanger.ma/" target="_blank" rel="nofollow noopener noreferrer">
-          <span class="bt-media"><img src="assets/img/card-institut-du-sein.webp" alt="Institut du Sein de Tanger homepage" loading="lazy"></span>
-          <span class="bt-top">
-            <span class="bt-chip glass">04 · Medical clinic</span>
-            
-          </span>
-          <span class="bt-panel glass">
-            <span class="bt-head"><span class="bt-name">Institut du Sein de Tanger</span><span class="bt-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-            <span class="bt-desc" style="color: #0a0a0a">Medical website for a breast surgeon and gynecologist: clear care pages, consultation requests and one-tap WhatsApp contact.</span>
-            <span class="bt-foot">
-              <span class="bt-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Tangier, Morocco</span>
-              <span class="bt-tags"><span class="bt-tag">Web design</span><span class="bt-tag">Local SEO</span></span>
-            </span>
-          </span>
-        </a>
-      
-        <a class="bt-card bt-m" href="https://talensio.ma/" target="_blank" rel="nofollow noopener noreferrer">
-          <span class="bt-media"><img src="assets/img/card-talensio.webp" alt="Talensio homepage" loading="lazy"></span>
-          <span class="bt-top">
-            <span class="bt-chip glass">05 · Certified training</span>
-            
-          </span>
-          <span class="bt-panel glass">
-            <span class="bt-head"><span class="bt-name">Talensio</span><span class="bt-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-            <span class="bt-desc" style="color: #0a0a0a">Training platform with course search by domain, guided orientation and corporate programs.</span>
-            <span class="bt-foot">
-              <span class="bt-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Morocco</span>
-              <span class="bt-tags"><span class="bt-tag">Web design</span><span class="bt-tag">UX</span></span>
-            </span>
-          </span>
-        </a>
-      
-        <a data-extra hidden class="bt-card bt-m" href="https://www.modeiptv.ca/" target="_blank" rel="nofollow noopener noreferrer">
-          <span class="bt-media"><img src="assets/img/card-mode-iptv.webp" alt="Mode IPTV homepage" loading="lazy"></span>
-          <span class="bt-top">
-            <span class="bt-chip glass">06 · IPTV service</span>
-            
-          </span>
-          <span class="bt-panel glass">
-            <span class="bt-head"><span class="bt-name">Mode IPTV</span><span class="bt-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-            <span class="bt-desc" style="color: #0a0a0a">English IPTV Canada site with plans, a free trial and step-by-step setup guides.</span>
-            <span class="bt-foot">
-              <span class="bt-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Canada</span>
-              <span class="bt-tags"><span class="bt-tag">Web design</span><span class="bt-tag">SEO</span></span>
-            </span>
-          </span>
-        </a>
-      
-        <a data-extra hidden class="bt-card bt-m" href="https://nivelles-psychologue.be/" target="_blank" rel="nofollow noopener noreferrer">
-          <span class="bt-media"><img src="assets/img/card-nivelles.webp" alt="Psychologue Nivelles homepage" loading="lazy"></span>
-          <span class="bt-top">
-            <span class="bt-chip glass">07 · Psychologists network</span>
-            
-          </span>
-          <span class="bt-panel glass">
-            <span class="bt-head"><span class="bt-name">Psychologue Nivelles</span><span class="bt-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-            <span class="bt-desc" style="color: #0a0a0a">Directory helping patients find the right psychologist in Nivelles.</span>
-            <span class="bt-foot">
-              <span class="bt-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Nivelles, Belgium</span>
-              <span class="bt-tags"><span class="bt-tag">Healthcare</span><span class="bt-tag">Local SEO</span></span>
-            </span>
-          </span>
-        </a>
-      
-        <a data-extra hidden class="bt-card bt-m" href="https://psychologue-braine-lalleud.be/" target="_blank" rel="nofollow noopener noreferrer">
-          <span class="bt-media"><img src="assets/img/card-braine.webp" alt="Psychologue Braine-l’Alleud homepage" loading="lazy"></span>
-          <span class="bt-top">
-            <span class="bt-chip glass">08 · Psychologists network</span>
-            
-          </span>
-          <span class="bt-panel glass">
-            <span class="bt-head"><span class="bt-name">Psychologue Braine-l’Alleud</span><span class="bt-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-            <span class="bt-desc" style="color: #0a0a0a">Psychologists network with team profiles, therapy types and practice addresses.</span>
-            <span class="bt-foot">
-              <span class="bt-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Braine-l’Alleud, Belgium</span>
-              <span class="bt-tags"><span class="bt-tag">Healthcare</span><span class="bt-tag">Local SEO</span></span>
-            </span>
-          </span>
-        </a>
-      
-        <a data-extra hidden class="bt-card bt-m" href="https://psychologue-flemalle.be/" target="_blank" rel="nofollow noopener noreferrer">
-          <span class="bt-media"><img src="assets/img/card-flemalle.webp" alt="Psychologue Flémalle homepage" loading="lazy"></span>
-          <span class="bt-top">
-            <span class="bt-chip glass">09 · Psychologist</span>
-            
-          </span>
-          <span class="bt-panel glass">
-            <span class="bt-head"><span class="bt-name">Psychologue Flémalle</span><span class="bt-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-            <span class="bt-desc" style="color: #0a0a0a">Psychologist site with consultations, psychotherapy pages, FAQ and online booking.</span>
-            <span class="bt-foot">
-              <span class="bt-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Flémalle, Belgium</span>
-              <span class="bt-tags"><span class="bt-tag">Healthcare</span><span class="bt-tag">Local SEO</span></span>
-            </span>
-          </span>
-        </a>
-      
+<!-- autoplay showcase -->
+    <div class="sc" id="sc" aria-roledescription="carousel" aria-label="Recent work 2026">
+      <div class="sc-slides">
+        <article class="sc-slide on" id="sc-p1" role="tabpanel" aria-label="Deratihome" aria-hidden="false">
+          <div class="sc-info"><span class="sc-num">01 / 05 · Pest control</span><h3 class="sc-name">Deratihome</h3><p class="sc-desc">Pest control website for Brussels: urgent quote form, a page per pest, intervention map and Google reviews, designed to turn local searches into calls.</p><span class="sc-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Brussels, Belgium</span><span class="sc-tags"><span class="sc-tag">Lead generation</span><span class="sc-tag">Local SEO</span></span><a class="sc-cta btn-gloss" href="deratihome.html">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
+          <div class="sc-devices">
+            <span class="sc-laptop"><span class="sc-chrome"><i></i><i></i><i></i><span class="sc-url">deratihome.be</span></span><span class="sc-screen"><img class="sc-roll" src="assets/img/web-deratihome-full.webp" alt="Deratihome website on desktop" loading="lazy" decoding="async"></span></span>
+            <span class="sc-phone sc-ph1"><span class="sc-island"></span><span class="sc-pscreen"><img class="sc-roll" src="assets/img/mobile-full/deratihome.webp" alt="Deratihome website on iPhone" loading="lazy" decoding="async"></span></span>
+            <span class="sc-phone sc-ph2"><span class="sc-island"></span><span class="sc-pscreen"><img src="assets/img/deratihome/mobile-services.webp" alt="Deratihome section on iPhone" loading="lazy" decoding="async"></span></span>
+          </div>
+        </article>
+        <article class="sc-slide" id="sc-p2" role="tabpanel" aria-label="Talensio" aria-hidden="true">
+          <div class="sc-info"><span class="sc-num">02 / 05 · Certified training</span><h3 class="sc-name">Talensio</h3><p class="sc-desc">Training platform with course search by domain, guided orientation and corporate programs.</p><span class="sc-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Morocco</span><span class="sc-tags"><span class="sc-tag">Web design</span><span class="sc-tag">UX</span></span><a class="sc-cta btn-gloss" href="talensio.html">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
+          <div class="sc-devices">
+            <span class="sc-laptop"><span class="sc-chrome"><i></i><i></i><i></i><span class="sc-url">talensio.ma</span></span><span class="sc-screen"><img class="sc-roll" src="assets/img/web-talensio.webp" alt="Talensio website on desktop" loading="lazy" decoding="async"></span></span>
+            <span class="sc-phone sc-ph1"><span class="sc-island"></span><span class="sc-pscreen"><img class="sc-roll" src="assets/img/mobile-full/talensio.webp" alt="Talensio website on iPhone" loading="lazy" decoding="async"></span></span>
+            <span class="sc-phone sc-ph2"><span class="sc-island"></span><span class="sc-pscreen"><img src="assets/img/talensio/mobile-programmes.webp" alt="Talensio section on iPhone" loading="lazy" decoding="async"></span></span>
+          </div>
+        </article>
+        <article class="sc-slide" id="sc-p3" role="tabpanel" aria-label="Institut du Sein de Tanger" aria-hidden="true">
+          <div class="sc-info"><span class="sc-num">03 / 05 · Medical clinic</span><h3 class="sc-name">Institut du Sein de Tanger</h3><p class="sc-desc">Medical website for a breast surgeon and gynecologist: clear care pages, consultation requests and one-tap WhatsApp contact.</p><span class="sc-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Tangier, Morocco</span><span class="sc-tags"><span class="sc-tag">Web design</span><span class="sc-tag">Local SEO</span></span><a class="sc-cta btn-gloss" href="institut-du-sein.html">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
+          <div class="sc-devices">
+            <span class="sc-laptop"><span class="sc-chrome"><i></i><i></i><i></i><span class="sc-url">institutduseintanger.ma</span></span><span class="sc-screen"><img class="sc-roll" src="assets/img/web-institut-du-sein-full.webp" alt="Institut du Sein de Tanger website on desktop" loading="lazy" decoding="async"></span></span>
+            <span class="sc-phone sc-ph1"><span class="sc-island"></span><span class="sc-pscreen"><img class="sc-roll" src="assets/img/mobile-full/institut.webp" alt="Institut du Sein de Tanger website on iPhone" loading="lazy" decoding="async"></span></span>
+            <span class="sc-phone sc-ph2"><span class="sc-island"></span><span class="sc-pscreen"><img src="assets/img/institut-du-sein/mobile-soins.webp" alt="Institut du Sein de Tanger section on iPhone" loading="lazy" decoding="async"></span></span>
+          </div>
+        </article>
+        <article class="sc-slide" id="sc-p4" role="tabpanel" aria-label="Store Access" aria-hidden="true">
+          <div class="sc-info"><span class="sc-num">04 / 05 · E-commerce</span><h3 class="sc-name">Store Access</h3><p class="sc-desc">WooCommerce store for pro equipment, now with 794 queries in the Google top 10 and impressions ×2.2 in 12 months.</p><span class="sc-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Morocco</span><span class="sc-tags"><span class="sc-tag">WooCommerce</span><span class="sc-tag">SEO</span></span><a class="sc-cta btn-gloss" href="store-access.html">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
+          <div class="sc-devices">
+            <span class="sc-laptop"><span class="sc-chrome"><i></i><i></i><i></i><span class="sc-url">storeaccess.ma</span></span><span class="sc-screen"><img class="sc-roll" src="assets/img/web-store-access-full.webp" alt="Store Access website on desktop" loading="lazy" decoding="async"><span class="sc-stat">×15 organic traffic</span></span></span>
+            <span class="sc-phone sc-ph1"><span class="sc-island"></span><span class="sc-pscreen"><img class="sc-roll" src="assets/img/mobile-full/storeaccess.webp" alt="Store Access website on iPhone" loading="lazy" decoding="async"></span></span>
+            <span class="sc-phone sc-ph2"><span class="sc-island"></span><span class="sc-pscreen"><img src="assets/img/store-access/mobile-produits.webp" alt="Store Access section on iPhone" loading="lazy" decoding="async"></span></span>
+          </div>
+        </article>
+        <article class="sc-slide" id="sc-p5" role="tabpanel" aria-label="IPTV from Canada" aria-hidden="true">
+          <div class="sc-info"><span class="sc-num">05 / 05 · IPTV service</span><h3 class="sc-name">IPTV from Canada</h3><p class="sc-desc">IPTV Canada site with subscription plans, a free trial, channel categories and reseller program.</p><span class="sc-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Canada</span><span class="sc-tags"><span class="sc-tag">Web design</span><span class="sc-tag">SEO</span></span><a class="sc-cta btn-gloss" href="iptv-from-canada.html">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
+          <div class="sc-devices">
+            <span class="sc-laptop"><span class="sc-chrome"><i></i><i></i><i></i><span class="sc-url">iptvfromcanada.ca</span></span><span class="sc-screen"><img class="sc-roll" src="assets/img/web-iptvfromcanada-full.webp" alt="IPTV from Canada website on desktop" loading="lazy" decoding="async"></span></span>
+            <span class="sc-phone sc-ph1"><span class="sc-island"></span><span class="sc-pscreen"><img class="sc-roll" src="assets/img/mobile-full/iptv.webp" alt="IPTV from Canada website on iPhone" loading="lazy" decoding="async"></span></span>
+            <span class="sc-phone sc-ph2"><span class="sc-island"></span><span class="sc-pscreen"><img src="assets/img/iptv-from-canada/mobile-forfaits.webp" alt="IPTV from Canada section on iPhone" loading="lazy" decoding="async"></span></span>
+          </div>
+        </article>
+      </div>
+      <div class="sc-bar">
+        <div class="sc-tabs" role="tablist" aria-label="Choose a project">
+          <button type="button" class="sc-tab on" role="tab" aria-selected="true" aria-controls="sc-p1"><span class="sc-tab-n">01</span><span class="sc-tab-name">Deratihome</span><span class="sc-prog"><span></span></span></button>
+          <button type="button" class="sc-tab" role="tab" aria-selected="false" aria-controls="sc-p2"><span class="sc-tab-n">02</span><span class="sc-tab-name">Talensio</span><span class="sc-prog"><span></span></span></button>
+          <button type="button" class="sc-tab" role="tab" aria-selected="false" aria-controls="sc-p3"><span class="sc-tab-n">03</span><span class="sc-tab-name">Institut du Sein de Tanger</span><span class="sc-prog"><span></span></span></button>
+          <button type="button" class="sc-tab" role="tab" aria-selected="false" aria-controls="sc-p4"><span class="sc-tab-n">04</span><span class="sc-tab-name">Store Access</span><span class="sc-prog"><span></span></span></button>
+          <button type="button" class="sc-tab" role="tab" aria-selected="false" aria-controls="sc-p5"><span class="sc-tab-n">05</span><span class="sc-tab-name">IPTV from Canada</span><span class="sc-prog"><span></span></span></button>
+        </div>
+        <div class="sc-nav"><button type="button" class="sc-arrow" data-dir="-1" aria-label="Previous project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button><button type="button" class="sc-arrow" data-dir="1" aria-label="Next project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
+      </div>
     </div>
-    <div class="bt-more"><button type="button" class="bt-toggle" id="bt-toggle" aria-expanded="false">View all projects</button></div>
   </section>
 
   <!-- MARQUEE -->
   <section aria-label="Keywords ranked number 1" style="background: #0A0A0A; color: #F7F7F7; padding: 18px 0; overflow: hidden">
     <div class="marquee" style="display: flex; width: max-content; gap: 44px; font-size: 17px; white-space: nowrap">
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> punaise de lit</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> coffrage maroc</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> maler stundenlohn</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> pointeuse prix maroc</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> iptv canada</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> iptv quebec</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> matériel sport maroc</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> luxury kitchen</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> punaise de lit</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> coffrage maroc</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> maler stundenlohn</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> pointeuse prix maroc</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> iptv canada</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> iptv quebec</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> matériel sport maroc</span>
-      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">#1</span> luxury kitchen</span>
+      <span class="mq-lead">&#127464;&#127462; Mode IPTV &middot; Canada</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">18.7K clicks</span> iptv canada</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">1.4K clicks</span> best iptv canada</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">1K clicks</span> iptv providers</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">658 clicks</span> canada iptv</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">520 clicks</span> iptv subscription canada</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">415 clicks</span> canadian iptv</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">404 clicks</span> iptv providers canada</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">1K clicks</span> iptv aanbieders</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">372 clicks</span> iptv canada premium</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">297 clicks</span> best iptv in canada</span>
+      <span class="mq-lead">&#127464;&#127462; Mode IPTV &middot; Canada</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">18.7K clicks</span> iptv canada</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">1.4K clicks</span> best iptv canada</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">1K clicks</span> iptv providers</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">658 clicks</span> canada iptv</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">520 clicks</span> iptv subscription canada</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">415 clicks</span> canadian iptv</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">404 clicks</span> iptv providers canada</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">1K clicks</span> iptv aanbieders</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">372 clicks</span> iptv canada premium</span>
+      <span><span style="color: #E8749F; font-family: 'Geist Mono', monospace">297 clicks</span> best iptv in canada</span>
     </div>
   </section>
 
   <!-- 03 SEO -->
-  <section id="seo" style="position: relative; max-width: 1360px; margin: 0 auto; box-sizing: border-box; padding: 136px clamp(20px, 4vw, 56px) 136px; display: flex; flex-direction: column; gap: 40px">
+  <section id="seo" style="position: relative; max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; padding: 136px clamp(20px, 4vw, 56px) 136px; display: flex; flex-direction: column; gap: 40px">
     <div class="wm" aria-hidden="true"><span class="wm-word">SEO</span><span class="wm-ring"></span></div>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
       <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px">
         <span style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B5A64">03 — SEO</span>
-        <h2 style="margin: 0; font-family: 'Geist', 'Helvetica Neue', sans-serif; font-size: clamp(40px, 4.8vw, 68px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; width: 812px">SEO that <span style="color: #C8336D">compounds</span>, <span style="color: #6B5A64">not campaigns that stop.</span></h2>
+        <h2 style="margin: 0; font-family: 'Geist', 'Helvetica Neue', sans-serif; font-size: clamp(40px, 4.8vw, 68px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; width: min(812px, 100%)">SEO that <span style="color: #C8336D">compounds</span>, <span style="color: #6B5A64">not campaigns that stop.</span></h2>
       </div>
-      <p style="margin: 0; max-width: 400px; font-size: 16px; line-height: 1.6; color: #4A3F45">Technical foundations, buyer-first content and honest tracking. One playbook, adapted to local services, e-commerce and B2B niches.</p>
+      <p style="margin: 0; max-width: 400px; font-size: 16px; line-height: 1.6; color: #4A3F45">Technical foundations, buyer-first content and honest tracking. One playbook, adapted to local services, e-commerce and B2B niches. Every number below comes from Google Search Console.</p>
     </div>
 
-    <!-- client results -->
-    <div class="crs">
-      <a class="cr" href="seo.html">
-        <span class="cr-logo"><img src="assets/img/logo-telju.svg" alt="Telju Fitness logo" style="height: 40px; width: auto; max-width: 100%; display: block"></span>
-        <span class="cr-big">#1</span>
-        <span class="cr-lab">“materiel sport maroc”</span>
-        <ul class="cr-list"><li>×4.5 organic traffic</li><li>185 leads in 90 days</li></ul>
-        <span class="cr-foot"><span>Sport equipment · Morocco</span><span class="cr-go">Case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-      </a>
-      <a class="cr" href="seo.html">
-        <span class="cr-logo"><img src="assets/img/logo-store-access.webp" alt="Store Access logo" style="height: 38px; width: auto; max-width: 100%; display: block"></span>
-        <span class="cr-big">×15</span>
-        <span class="cr-lab">organic clicks in 12 months</span>
-        <ul class="cr-list"><li>703 top-10 keywords</li><li>Avg. position 40 → 7</li></ul>
-        <span class="cr-foot"><span>E-commerce · Morocco</span><span class="cr-go">Case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-      </a>
-      <a class="cr" href="seo.html">
-        <span class="cr-logo"><img src="assets/img/logo-ratokil.webp" alt="Ratokil logo" style="height: 30px; width: auto; max-width: 100%; display: block"></span>
-        <span class="cr-big">×6.5</span>
-        <span class="cr-lab">organic traffic in 7 months</span>
-        <ul class="cr-list"><li>#1 “punaise de lit”</li><li>100+ local leads</li></ul>
-        <span class="cr-foot"><span>Pest control · Belgium</span><span class="cr-go">Case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-      </a>
-      <a class="cr" href="seo.html">
-        <span class="cr-logo"><img src="assets/img/logo-sushi-pro.webp" alt="Sushi Pro logo" style="height: 44px; width: auto; max-width: 100%; display: block"></span>
-        <span class="cr-big">176</span>
-        <span class="cr-lab">keywords ranked #1</span>
-        <ul class="cr-list"><li>#2 “sushi tanger”</li><li>48% CTR on menu searches</li></ul>
-        <span class="cr-foot"><span>Restaurant · Tangier</span><span class="cr-go">Case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-      </a>
-      <a class="cr" href="seo.html">
-        <span class="cr-logo"><img src="assets/img/logo-keller.webp" alt="Keller Kitchens logo" style="height: 30px; width: auto; max-width: 100%; display: block"></span>
-        <span class="cr-big">#1</span>
-        <span class="cr-lab">“keller kitchen” · 41% CTR</span>
-        <ul class="cr-list"><li>#1 “luxury kitchen”</li><li>168 page-1 keywords</li></ul>
-        <span class="cr-foot"><span>Luxury kitchens · Morocco</span><span class="cr-go">Case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-      </a>
-      <a class="cr" href="https://www.modeiptv.ca/" target="_blank" rel="nofollow noopener noreferrer">
-        <span class="cr-logo"><span style="display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 10px; background: #0A0A0A"><img src="assets/img/logo-mode-iptv.png" alt="Mode IPTV logo" style="height: 30px; width: auto; max-width: 100%; display: block"></span></span>
-        <span class="cr-big">#1</span>
-        <span class="cr-lab">“mode iptv canada” · 84% CTR</span>
-        <ul class="cr-list"><li>3,678 clicks in 28 days (+54%)</li><li>429 keywords in top 10</li></ul>
-        <span class="cr-foot"><span>IPTV service · Canada</span><span class="cr-go">Visit site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span>
-      </a>
+    <!-- client results: before / after -->
+    <div class="bx">
+      <a class="bx-card bx-feat" href="seo-mode-iptv.html"><span class="bx-flag">&#127464;&#127462; Featured &middot; Canadian project</span><span class="bx-top"><span class="bx-logo"><span style="display:inline-flex;padding:5px 10px;border-radius:9px;background:#0A0A0A"><img src="assets/img/logo-mode-iptv.png" alt="Mode IPTV logo" style="height:26px"></span></span><span class="bx-x">&times;2.7</span></span><span class="bx-meta">IPTV service &middot; Canada</span><span class="bx-lab">Organic clicks / month</span><span class="bx-ba"><span class="bx-b"><small>Before &middot; Nov 2025</small><b>8.6K</b></span><span class="bx-arr" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span><span class="bx-a"><small>After &middot; Mar 2026</small><b>23.4K</b></span></span><span class="bx-kw"><span><b>iptv canada</b><i>18.7K clicks</i></span><span><b>best iptv canada</b><i>1.4K clicks</i></span><span><b>canada iptv</b><i>658 clicks</i></span><span><b>iptv canada premium</b><i>pos 4.0</i></span></span><span class="bx-foot"><span>117K clicks in 12 months</span><span class="bx-go">Case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span></a>
+      <a class="bx-card" href="seo-koop-iptv.html"><span class="bx-top"><span class="bx-logo"><img src="assets/img/logo-koop-iptv.webp" alt="Koop IPTV logo" style="height:34px"></span><span class="bx-x">&times;30</span></span><span class="bx-meta">IPTV service &middot; Netherlands</span><span class="bx-lab">Organic clicks / month</span><span class="bx-ba"><span class="bx-b"><small>Before &middot; Mar 2026</small><b>80</b></span><span class="bx-arr" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span><span class="bx-a"><small>After &middot; Aug 2026</small><b>2,375</b></span></span><span class="bx-foot"><span>Position 41.6 &rarr; 8.6</span><span class="bx-go">Case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span></a>
+      <a class="bx-card" href="seo-telju-fitness.html"><span class="bx-top"><span class="bx-logo"><img src="assets/img/logo-telju.svg" alt="Telju Fitness logo" style="height:34px"></span><span class="bx-x">&times;142</span></span><span class="bx-meta">Sports equipment &middot; Morocco</span><span class="bx-lab">Organic clicks / month</span><span class="bx-ba"><span class="bx-b"><small>Before &middot; Nov 2025</small><b>7</b></span><span class="bx-arr" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span><span class="bx-a"><small>After &middot; Aug 2026</small><b>995</b></span></span><span class="bx-foot"><span>5,580 clicks in the first year</span><span class="bx-go">Case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span></a>
+      <a class="bx-card" href="seo-maler-gsq.html"><span class="bx-top"><span class="bx-logo"><img src="assets/img/logo-maler-gsq.png" alt="Maler GSQ logo" style="height:38px"></span><span class="bx-x">&times;11.7</span></span><span class="bx-meta">Painting company &middot; Vienna</span><span class="bx-lab">Organic clicks / month</span><span class="bx-ba"><span class="bx-b"><small>Before &middot; Nov 2025</small><b>45</b></span><span class="bx-arr" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span><span class="bx-a"><small>After &middot; Aug 2026</small><b>527</b></span></span><span class="bx-foot"><span>169 queries in the top 3</span><span class="bx-go">Case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span></a>
+      <a class="bx-card" href="seo-store-access.html"><span class="bx-top"><span class="bx-logo"><img src="assets/img/logo-store-access.webp" alt="Store Access logo" style="height:32px"></span><span class="bx-x">&times;2.2</span></span><span class="bx-meta">E-commerce &middot; Morocco</span><span class="bx-lab">Impressions / month</span><span class="bx-ba"><span class="bx-b"><small>Before &middot; Nov 2025</small><b>53.6K</b></span><span class="bx-arr" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span><span class="bx-a"><small>After &middot; Aug 2026</small><b>115K</b></span></span><span class="bx-foot"><span>13.1K clicks in 12 months</span><span class="bx-go">Case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span></a>
+      <a class="bx-card bx-all" href="seo.html"><span class="bx-lab" style="color:#E9DDE3">All SEO case studies</span><b class="bx-all-t">Real Search Console data, before and after.</b><span class="bx-go" style="color:#F3B9CF">See the 5 case studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
     </div>
-    <div class="crs-hint" aria-hidden="true">6 clients · scroll <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8336D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></div>
 
   </section>
 
   <!-- 04 HOW I WORK (dark) -->
   <section id="process" style="padding: 0 clamp(12px, 2vw, 24px) 136px">
-    <div class="work-panel" style="position: relative; overflow: hidden; max-width: 1360px; margin: 0 auto; box-sizing: border-box; background: #0A0A0A; color: #F7F7F7; border-radius: 32px; padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; gap: 56px">
+    <div class="work-panel" style="position: relative; overflow: hidden; max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; background: #0A0A0A; color: #F7F7F7; border-radius: 32px; padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; gap: 56px">
       <div class="wm wm-dark" aria-hidden="true"><span class="wm-word">HOW</span><span class="wm-ring"></span></div>
       <div class="pr-glow" aria-hidden="true"></div>
       <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
@@ -662,7 +568,7 @@ a{color:inherit}a:hover{color:#AE1C52}
   </section>
 
   <!-- 05 SERVICES (light) -->
-  <section id="services" style="position: relative; max-width: 1360px; margin: 0 auto; box-sizing: border-box; padding: 24px clamp(20px, 4vw, 56px) 144px; display: flex; flex-direction: column; gap: 48px">
+  <section id="services" style="position: relative; max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; padding: 24px clamp(20px, 4vw, 56px) 144px; display: flex; flex-direction: column; gap: 48px">
     <div class="wm" aria-hidden="true"><span class="wm-word">DO</span><span class="wm-ring"></span></div>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
       <div style="display: flex; flex-direction: column; gap: 14px; max-width: 720px">
@@ -716,7 +622,7 @@ a{color:inherit}a:hover{color:#AE1C52}
 
   <!-- 06 CONTACT (dark) -->
   <section id="contact" style="padding: 0 clamp(12px, 2vw, 24px) 24px">
-    <div style="position: relative; max-width: 1360px; margin: 0 auto; box-sizing: border-box; background: #0A0A0A; color: #F7F7F7; border-radius: 32px; overflow: hidden; padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 56px); min-height: 460px; display: flex; align-items: center">
+    <div style="position: relative; max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; background: #0A0A0A; color: #F7F7F7; border-radius: 32px; overflow: hidden; padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 56px); min-height: 460px; display: flex; align-items: center">
       <div class="float" style="position: absolute; z-index: 0; right: -14%; top: -30%; width: 72%; aspect-ratio: 4 / 3; pointer-events: none">
         <img src="assets/img/veil-contact.webp" alt="" style="width: 100%; height: 100%; display: block">
       </div>
@@ -738,20 +644,53 @@ a{color:inherit}a:hover{color:#AE1C52}
   </section>
 
   <!-- FOOTER -->
-  <footer style="max-width: 1360px; margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px) 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #6B5A64">
+  <footer style="max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px) 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #6B5A64">
     <span>© 2026 Khadija EL AZIZI · SEO Specialist</span>
     <span>Tangier, Morocco</span>
   </footer>
 </div>
 <script>
 (function(){
-  var btn=document.getElementById('bt-toggle'); if(!btn) return;
-  var extra=[].slice.call(document.querySelectorAll('.bt-card[data-extra]'));
-  var open=false, total=document.querySelectorAll('.bt-card').length;
-  function render(){ extra.forEach(function(c){c.hidden=!open;}); btn.setAttribute('aria-expanded',open?'true':'false');
-    btn.textContent=open?'Show fewer projects':'View all '+total+' projects (+'+extra.length+')'; }
-  btn.addEventListener('click',function(){open=!open;render();}); render();
+  var sc=document.getElementById('sc'); if(!sc) return;
+  var slides=[].slice.call(sc.querySelectorAll('.sc-slide')), tabs=[].slice.call(sc.querySelectorAll('.sc-tab'));
+  var still=matchMedia('(prefers-reduced-motion:reduce)').matches, cur=0, hover=false, seen=false;
+  var MAXD=2200, MAXP=2600;
+  function measure(){ sc.querySelectorAll('.sc-roll').forEach(function(im){ var box=im.parentElement; var d=Math.max(0, im.offsetHeight-box.offsetHeight);
+    var lim=im.closest('.sc-phone') ? MAXP*box.offsetWidth/390 : MAXD*box.offsetWidth/1440; im.style.setProperty('--shift', (-Math.min(d, lim))+'px'); }); }
+  function show(i){
+    cur=(i+slides.length)%slides.length;
+    slides.forEach(function(s,k){ var on=k===cur; s.classList.toggle('on',on); s.setAttribute('aria-hidden',on?'false':'true');
+      s.querySelectorAll('img').forEach(function(im){ if(on||k===(cur+1)%slides.length) im.loading='eager'; });
+      s.querySelectorAll('.sc-roll').forEach(function(im){ im.style.animation='none'; void im.offsetWidth; im.style.animation=''; }); });
+    tabs.forEach(function(t,k){ t.classList.toggle('on',k===cur); t.classList.toggle('done',k<cur); t.setAttribute('aria-selected',k===cur?'true':'false');
+      var p=t.querySelector('.sc-prog span'); p.style.animation='none'; void p.offsetWidth; p.style.animation=''; });
+    measure();
+  }
+  function pause(){ sc.classList.toggle('paused', hover || !seen); }
+  tabs.forEach(function(t,k){ t.addEventListener('click',function(){ show(k); });
+    t.querySelector('.sc-prog span').addEventListener('animationend',function(){ if(k===cur && !still) show(cur+1); }); });
+  sc.querySelectorAll('.sc-arrow').forEach(function(b){ b.addEventListener('click',function(){ show(cur+(+b.dataset.dir)); }); });
+  sc.querySelectorAll('.sc-laptop').forEach(function(l){ l.addEventListener('mouseenter',function(){ hover=true; pause(); }); l.addEventListener('mouseleave',function(){ hover=false; pause(); }); });
+  var x0=null; sc.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+  sc.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>50) show(cur+(dx<0?1:-1)); x0=null; });
+  sc.addEventListener('keydown',function(e){ if(e.key==='ArrowRight') show(cur+1); if(e.key==='ArrowLeft') show(cur-1); });
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ seen=es[0].isIntersecting; pause(); },{threshold:0.35}).observe(sc); } else { seen=true; }
+  sc.querySelectorAll('img').forEach(function(im){ im.addEventListener('load', measure); });
+  window.addEventListener('resize', measure);
+  pause(); show(0);
 })();
 </script>
+<script>
+(function(){
+  document.querySelectorAll('.nav-dd').forEach(function(dd){
+    var btn=dd.querySelector('.nav-dd-btn');
+    var menu=dd.querySelector('.nav-dd-menu');
+    btn.addEventListener('click',function(e){ e.stopPropagation(); var o=dd.classList.toggle('open'); btn.setAttribute('aria-expanded',o?'true':'false'); menu.style.top=innerWidth<=760?(dd.getBoundingClientRect().bottom+12)+'px':''; });
+    document.addEventListener('click',function(e){ if(!dd.contains(e.target)){ dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
+    dd.addEventListener('keydown',function(e){ if(e.key==='Escape'){ dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.focus(); } });
+  });
+})();
+</script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

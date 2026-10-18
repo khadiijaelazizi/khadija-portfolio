@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Websites — Khadija EL AZIZI, Web Designer</title>
-<meta name="description" content="Nine WordPress &amp; Elementor websites designed and built to bring in clients, in Morocco, Belgium and Canada.">
+<meta name="description" content="Five WordPress, Elementor and WooCommerce websites designed and built in 2026 to bring in clients, in Morocco, Belgium and Canada.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Websites — Khadija EL AZIZI, Web Designer">
-<meta property="og:description" content="Nine WordPress &amp; Elementor websites designed and built to bring in clients, in Morocco, Belgium and Canada.">
+<meta property="og:description" content="Five WordPress, Elementor and WooCommerce websites designed and built in 2026 to bring in clients, in Morocco, Belgium and Canada.">
 <meta property="og:image" content="https://khadiijaelazizi.github.io/khadija-portfolio/assets/img/khadija-el-azizi.jpg">
 <meta name="referrer" content="no-referrer">
 <link rel="canonical" href="https://khadiijaelazizi.github.io/khadija-portfolio/websites.html">
@@ -15,6 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
+:root{--wrap:1360px}
+@media (min-width:1600px){:root{--wrap:1680px}}
 body{margin:0;background:#F7F7F7}
 a{color:inherit}a:hover{color:#AE1C52}
 @keyframes kfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -254,7 +256,7 @@ a{color:inherit}a:hover{color:#AE1C52}
 .bw-bar i{width:9px;height:9px;border-radius:50%;background:#DCCFD6}
 .bw-bar i:first-child{background:#E8749F}
 .bw-url{margin-left:12px;height:18px;border-radius:999px;background:#FFFFFF;font-family:'Geist Mono',monospace;font-size:11px;line-height:18px;padding:0 14px;color:#988592;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.wi{max-width:1360px;margin:0 auto;box-sizing:border-box;padding:48px clamp(20px,4vw,56px) 0}
+.wi{max-width:var(--wrap);margin:0 auto;box-sizing:border-box;padding:48px clamp(20px,4vw,56px) 0}
 .wi-top{display:flex;flex-direction:column;gap:20px;max-width:980px;margin-bottom:40px}
 .wi-h1{margin:0;font-size:clamp(46px,5.2vw,80px);font-weight:700;letter-spacing:-0.045em;line-height:1}
 .wi-lead{margin:0;max-width:560px;font-size:clamp(18px,1.5vw,21px);line-height:1.55;color:#4A3F45}
@@ -265,7 +267,7 @@ a{color:inherit}a:hover{color:#AE1C52}
 .tb-btn.on{background:#0A0A0A;border-color:#0A0A0A;color:#FFFFFF;box-shadow:0 10px 22px rgba(10,10,10,.18)}
 .tb-btn.on i{color:#E8749F}
 .tb-btn:focus-visible,.pj-arrow:focus-visible{outline:2px solid #C8336D;outline-offset:2px}
-.pj-stage{max-width:1360px;margin:0 auto;box-sizing:border-box;padding:40px clamp(20px,4vw,56px) 24px}
+.pj-stage{max-width:var(--wrap);margin:0 auto;box-sizing:border-box;padding:40px clamp(20px,4vw,56px) 24px}
 .pj{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,64px);align-items:center;animation:pjIn .55s cubic-bezier(.2,.7,.2,1)}
 @keyframes pjIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .pj-media{min-width:0}
@@ -274,6 +276,7 @@ a{color:inherit}a:hover{color:#AE1C52}
 .sh-win{overflow-y:auto;scrollbar-width:thin;scrollbar-color:#C8336D #F1EBEE;outline:none}
 .sh-hint{position:absolute;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:500;color:#FFFFFF;background:rgba(10,10,10,.78);pointer-events:none;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .pj-duo{position:relative;padding-right:18%}
+.pj-duo .sh-hint{right:auto;left:14px}
 .shm{position:absolute;right:0;bottom:-24px;width:26%;margin:0;border-radius:24px;padding:6px;background:#0A0A0A;box-shadow:0 24px 60px -16px rgba(80,10,40,.45)}
 .shm img{display:block;width:100%;height:auto;border-radius:19px}
 .pj-info{display:flex;flex-direction:column;gap:22px}
@@ -294,28 +297,47 @@ a{color:inherit}a:hover{color:#AE1C52}
 .pj-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;border-top:1px solid #E6DCE1}
 .pj-link{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:500;color:#0A0A0A;text-decoration:none;border-bottom:1px solid #C8336D;padding-bottom:3px;transition:gap .3s,color .3s}
 .pj-link:hover{gap:10px;color:#C8336D}
+.pj-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.pj-case{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 22px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;color:#FFFFFF}
 .pj-nav{display:flex;gap:8px}
 .pj-arrow{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid #E1D6DC;background:#FFFFFF;color:#0A0A0A;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
 .pj-arrow:hover{background:#C8336D;border-color:#C8336D;color:#FFFFFF}
-.wend-old{max-width:1360px;margin:72px auto 24px;box-sizing:border-box;padding:36px clamp(20px,4vw,56px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #E1D6DC;border-bottom:1px solid #E1D6DC}
+.wend-old{max-width:var(--wrap);margin:72px auto 24px;box-sizing:border-box;padding:36px clamp(20px,4vw,56px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #E1D6DC;border-bottom:1px solid #E1D6DC}
 @media (max-width:900px){.pj{grid-template-columns:1fr}.pj-list{grid-template-columns:1fr}.tb{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.tb-btn{flex:0 0 auto}}
 @media (prefers-reduced-motion:reduce){.pj{animation:none}}
-</style>
+header:has(.nav-dd){z-index:60!important}
+.nav-dd{position:relative;display:inline-flex;align-items:center;gap:2px}
+.nav-dd-btn{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;padding:0;border:0;border-radius:50%;background:none;color:inherit;cursor:pointer;transition:transform .3s,background .2s}
+.nav-dd-btn:hover{background:#F1E6EB}
+.nav-dd:hover .nav-dd-btn,.nav-dd.open .nav-dd-btn{transform:rotate(180deg)}
+.nav-dd-menu{position:absolute;z-index:50;top:calc(100% + 14px);left:50%;width:330px;box-sizing:border-box;padding:10px;border-radius:20px;background:rgba(255,255,255,.92);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid #EDE6EA;box-shadow:0 30px 60px rgba(120,20,60,.16);opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .25s,transform .3s cubic-bezier(.2,.7,.2,1),visibility .25s}
+.nav-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu,.nav-dd.open .nav-dd-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.nav-dd-label{display:block;padding:6px 12px 8px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B5A64}
+.nav-dd-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;text-decoration:none;color:#0A0A0A;transition:background .2s}
+.nav-dd-item:hover,.nav-dd-item[aria-current="page"]{background:#F6E3EA;color:#0A0A0A}
+.nav-dd-n{flex:none;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;color:#C8336D;background:#FFFFFF;border:1px solid rgba(200,51,109,.25)}
+.nav-dd-item[aria-current="page"] .nav-dd-n{color:#FFFFFF;background:#C8336D;border-color:#C8336D}
+.nav-dd-t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.nav-dd-t b{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-dd-t small{font-size:12px;color:#6B5A64}
+.nav-dd-all{display:flex;justify-content:space-between;align-items:center;margin-top:6px;padding:12px;border-top:1px solid #EDE6EA;font-size:13px;font-weight:500;text-decoration:none;color:#A3184E}
+.nav-dd-all:hover{color:#C8336D}
+@media (max-width:760px){.nav-dd-menu{position:fixed;left:16px;right:16px;top:auto;width:auto;transform:translateY(8px)}.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu,.nav-dd.open .nav-dd-menu{transform:none}}
+.brand{display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;color:#0A0A0A;line-height:1}.brand-word{font-family:"Geist",sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.06em;line-height:1;margin:0}.brand-word i{font-style:normal;color:#C8336D}.brand-top,.brand-bot{font-family:"Geist",sans-serif;font-size:7.5px;font-weight:600;letter-spacing:.42em;padding-left:.42em}.brand-top{align-self:flex-end;margin-right:2px;color:#C8336D}.brand-bot{letter-spacing:.5em;color:#6B5A64}@media (max-width:640px){.brand-word{font-size:30px}}</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <div style="width: 100%; background: #F7F7F7; color: #0A0A0A; font-family: 'Geist', 'Helvetica Neue', sans-serif; overflow-x: clip">
 
   <!-- NAV -->
-  <header style="max-width: 1360px; margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; position: relative; z-index: 5">
-    <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 16px; letter-spacing: -0.01em">
-      <span style="width: 32px; height: 32px; border-radius: 50%; background: #0A0A0A; color: #F7F7F7; display: inline-flex; align-items: center; justify-content: center; font-size: 12px">KE</span>
-      Khadija EL AZIZI
-    </a>
+  <header style="max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; position: relative; z-index: 5">
+    <a href="index.html" class="brand" aria-label="Khadija El Azizi, home"><span class="brand-word">khadija<i>.</i></span></a>
     <nav aria-label="Main navigation" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 15px">
       <a href="index.html" style="text-decoration: none; color: #4A3F45">Home</a>
       <a href="about.html" style="text-decoration: none; color: #4A3F45">About</a>
-      <a href="websites.html" aria-current="page" style="text-decoration: none; color: #0A0A0A; font-weight: 500; border-bottom: 2px solid #C8336D; padding-bottom: 2px">Websites</a>
-      <a href="seo.html" style="text-decoration: none; color: #4A3F45">SEO</a>
+      <div class="nav-dd"><a href="websites.html" aria-current="page" style="text-decoration: none; color: #0A0A0A; font-weight: 500; border-bottom: 2px solid #C8336D; padding-bottom: 2px">Websites</a><button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="nav-dd-menu" aria-label="Show recent websites"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button><div class="nav-dd-menu" id="nav-dd-menu" data-wm="WEB"><span class="nav-dd-label">Recent work · 2026</span><a class="nav-dd-item" href="deratihome.html"><span class="nav-dd-n">01</span><span class="nav-dd-t"><b>Deratihome</b><small>Pest control · Belgium</small></span></a><a class="nav-dd-item" href="talensio.html"><span class="nav-dd-n">02</span><span class="nav-dd-t"><b>Talensio</b><small>Certified training · Morocco</small></span></a><a class="nav-dd-item" href="institut-du-sein.html"><span class="nav-dd-n">03</span><span class="nav-dd-t"><b>Institut du Sein de Tanger</b><small>Medical clinic · Morocco</small></span></a><a class="nav-dd-item" href="store-access.html"><span class="nav-dd-n">04</span><span class="nav-dd-t"><b>Store Access</b><small>E-commerce · Morocco</small></span></a><a class="nav-dd-item" href="iptv-from-canada.html"><span class="nav-dd-n">05</span><span class="nav-dd-t"><b>IPTV from Canada</b><small>IPTV service · Canada</small></span></a><a class="nav-dd-all" href="websites.html">All websites <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></div>
+      <div class="nav-dd"><a href="seo.html" style="text-decoration: none; color: #4A3F45">SEO</a><button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="nav-dd-menu-seo" aria-label="Show SEO case studies"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button><div class="nav-dd-menu" id="nav-dd-menu-seo" data-wm="SEO"><span class="nav-dd-label">SEO case studies &middot; GSC data</span><a class="nav-dd-item nav-dd-feat" href="seo-mode-iptv.html"><span class="nav-dd-n">01</span><span class="nav-dd-t"><b>Mode IPTV <em>&#127464;&#127462; Featured</em></b><small>IPTV &middot; Canada &middot; &times;2.7</small></span></a><a class="nav-dd-item" href="seo-koop-iptv.html"><span class="nav-dd-n">02</span><span class="nav-dd-t"><b>Koop IPTV</b><small>IPTV &middot; Netherlands &middot; &times;30</small></span></a><a class="nav-dd-item" href="seo-telju-fitness.html"><span class="nav-dd-n">03</span><span class="nav-dd-t"><b>Telju Fitness</b><small>Sports equipment &middot; Morocco &middot; &times;142</small></span></a><a class="nav-dd-item" href="seo-maler-gsq.html"><span class="nav-dd-n">04</span><span class="nav-dd-t"><b>Maler GSQ</b><small>Painting &middot; Vienna &middot; &times;11.7</small></span></a><a class="nav-dd-item" href="seo-store-access.html"><span class="nav-dd-n">05</span><span class="nav-dd-t"><b>Store Access</b><small>E-commerce &middot; Morocco &middot; &times;2.2</small></span></a><a class="nav-dd-all" href="seo.html">All SEO case studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div></div>
       <span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B5A64"><span style="color: #0A0A0A">EN</span> / FR</span>
       <a href="contact.html" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #0A0A0A; color: #F7F7F7; font-weight: 500; font-size: 14px">Let’s talk SEO</a>
     </nav>
@@ -325,25 +347,24 @@ a{color:inherit}a:hover{color:#AE1C52}
   <!-- WEB INTRO -->
   <section id="top" class="wi">
     <div class="wi-top">
-      <span class="pj-meta">Websites · 2023 – 2026</span>
-      <h1 class="wi-h1">Nine websites, <span style="color:#C8336D">designed and built</span><br><span style="color:#988592">to bring in clients.</span></h1>
-      <p class="wi-lead">Pick a project: you’ll see the real homepage, uncut, and exactly what I built on it.</p>
+      <span class="pj-meta">Websites · 2026</span>
+      <h1 class="wi-h1">Five websites, <span style="color:#C8336D">designed and built</span><br><span style="color:#988592">in 2026 to bring in clients.</span></h1>
+      <p class="wi-lead">Pick a project: scroll the real homepage, see it on mobile, and read exactly what I built. Each one has a full case study.</p>
     </div>
-    <div class="tb" data-tabs role="toolbar" aria-label="Choose a project"><button type="button" class="tb-btn on" data-tab="0" aria-pressed="true"><i>01</i>Deratihome</button><button type="button" class="tb-btn" data-tab="1" aria-pressed="false"><i>02</i>Store Access</button><button type="button" class="tb-btn" data-tab="2" aria-pressed="false"><i>03</i>Québec IPTV</button><button type="button" class="tb-btn" data-tab="3" aria-pressed="false"><i>04</i>Institut du Sein</button><button type="button" class="tb-btn" data-tab="4" aria-pressed="false"><i>05</i>Talensio</button><button type="button" class="tb-btn" data-tab="5" aria-pressed="false"><i>06</i>Mode IPTV</button><button type="button" class="tb-btn" data-tab="6" aria-pressed="false"><i>07</i>Psy Nivelles</button><button type="button" class="tb-btn" data-tab="7" aria-pressed="false"><i>08</i>Psy Braine</button><button type="button" class="tb-btn" data-tab="8" aria-pressed="false"><i>09</i>Psy Flémalle</button></div>
+    <div class="tb" data-tabs role="toolbar" aria-label="Choose a project"><button type="button" class="tb-btn on" data-tab="0" aria-pressed="true"><i>01</i>Deratihome</button><button type="button" class="tb-btn" data-tab="1" aria-pressed="false"><i>02</i>Talensio</button><button type="button" class="tb-btn" data-tab="2" aria-pressed="false"><i>03</i>Institut du Sein</button><button type="button" class="tb-btn" data-tab="3" aria-pressed="false"><i>04</i>Store Access</button><button type="button" class="tb-btn" data-tab="4" aria-pressed="false"><i>05</i>IPTV from Canada</button></div>
   </section>
 
   <section class="pj-stage" aria-live="polite">
       <div data-panel="0">
       <article class="pj" aria-labelledby="pj-h-0">
-        <div class="pj-media"><figure class="sh sh-scroll"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">deratihome.be</span></div><div class="sh-win" style="height:540px" tabindex="0" aria-label="Full homepage of deratihome.be, scrollable"><img src="assets/img/web-deratihome-full.webp" alt="deratihome.be — full homepage" width="1200" height="5669" loading="lazy"></div><span class="sh-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg> Scroll to see the full page</span></figure></div>
+        <div class="pj-media pj-duo"><figure class="sh sh-scroll"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">deratihome.be</span></div><div class="sh-win" style="height:540px" tabindex="0" aria-label="Full homepage of deratihome.be, scrollable"><img src="assets/img/web-deratihome-full.webp" alt="deratihome.be full homepage" width="1440" height="7597" loading="lazy"></div><span class="sh-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg> Scroll to see the full page</span></figure><figure class="shm"><img src="assets/img/deratihome/mobile-hero.webp" alt="Deratihome on mobile" width="780" height="1688" loading="lazy"></figure></div>
         <div class="pj-info">
-          <div class="pj-top"><span class="pj-n">01 / 09</span><span class="pj-meta">Pest control · Brussels, Belgium</span></div>
+          <div class="pj-top"><span class="pj-n">01 / 05</span><span class="pj-meta">Pest control · Brussels, Belgium</span></div>
           <h2 class="pj-h2" id="pj-h-0">Deratihome</h2>
           <div class="pj-block"><span class="pj-lab">My role</span><p class="pj-role">Full website creation with WordPress &amp; Elementor: design, build and launch.</p></div>
-          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>2-step urgent quote form in the hero</li><li>12 pest pages, one per search intent</li><li>Intervention map covering 10 communes</li><li>4-step “how it works” section</li><li>Google reviews block (5.0 ★, 56 reviews)</li><li>Blog, FAQ and 24/7 call buttons</li></ul></div>
-          
+          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>2-step urgent quote form in the hero</li><li>13 pest pages, one per search intent</li><li>Intervention map covering 10 communes</li><li>4-step “how it works” section</li><li>Google reviews block (5.0 ★, 56 reviews)</li><li>Blog, FAQ and 24/7 call buttons</li></ul></div>
           <div class="pj-actions">
-            <a class="pj-link" href="https://www.deratihome.be/" target="_blank" rel="nofollow noopener noreferrer">Visit deratihome.be <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+            <div class="pj-cta"><a class="pj-case btn-gloss" href="deratihome.html">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="pj-link" href="https://www.deratihome.be/" target="_blank" rel="nofollow noopener noreferrer">Visit deratihome.be <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
             <div class="pj-nav"><button type="button" class="pj-arrow" data-nav="prev" aria-label="Previous project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button><button type="button" class="pj-arrow" data-nav="next" aria-label="Next project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
           </div>
         </div>
@@ -351,15 +372,14 @@ a{color:inherit}a:hover{color:#AE1C52}
       </div>
       <div data-panel="1" hidden>
       <article class="pj" aria-labelledby="pj-h-1">
-        <div class="pj-media"><figure class="sh "><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">storeaccess.ma</span></div><img src="assets/img/web-store-access.webp" alt="storeaccess.ma — homepage" width="800" height="505" loading="lazy"></figure></div>
+        <div class="pj-media pj-duo"><figure class="sh sh-scroll"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">talensio.ma</span></div><div class="sh-win" style="height:540px" tabindex="0" aria-label="Full homepage of talensio.ma, scrollable"><img src="assets/img/web-talensio.webp" alt="talensio.ma full homepage" width="1440" height="11140" loading="lazy"></div><span class="sh-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg> Scroll to see the full page</span></figure><figure class="shm"><img src="assets/img/talensio/mobile-hero.webp" alt="Talensio on mobile" width="780" height="1688" loading="lazy"></figure></div>
         <div class="pj-info">
-          <div class="pj-top"><span class="pj-n">02 / 09</span><span class="pj-meta">E-commerce · Morocco</span></div>
-          <h2 class="pj-h2" id="pj-h-1">Store Access</h2>
+          <div class="pj-top"><span class="pj-n">02 / 05</span><span class="pj-meta">Certified training · Morocco</span></div>
+          <h2 class="pj-h2" id="pj-h-1">Talensio</h2>
           <div class="pj-block"><span class="pj-lab">My role</span><p class="pj-role">Full website creation with WordPress &amp; Elementor: design, build and launch.</p></div>
-          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>Catalogue for pros and individuals</li><li>Category menu built for search</li><li>Product pages ready to rank</li><li>WhatsApp contact on every page</li></ul></div>
-          <div class="pj-block"><span class="pj-lab">Result</span><div class="pj-res"><div><strong>×15</strong><span>organic clicks in 12 months</span></div><div><strong>703</strong><span>keywords in the top 10</span></div></div></div>
+          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>Hero with audience tabs and course search</li><li>Filterable catalogue of 6 certified tracks</li><li>“What&rsquo;s your goal?” guided orientation</li><li>Live session preview and 4-step timeline</li><li>One page per program (SAP, Power BI…)</li><li>Mobile-first layout with WhatsApp button</li></ul></div>
           <div class="pj-actions">
-            <a class="pj-link" href="https://storeaccess.ma/" target="_blank" rel="nofollow noopener noreferrer">Visit storeaccess.ma <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+            <div class="pj-cta"><a class="pj-case btn-gloss" href="talensio.html">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="pj-link" href="https://talensio.ma/" target="_blank" rel="nofollow noopener noreferrer">Visit talensio.ma <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
             <div class="pj-nav"><button type="button" class="pj-arrow" data-nav="prev" aria-label="Previous project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button><button type="button" class="pj-arrow" data-nav="next" aria-label="Next project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
           </div>
         </div>
@@ -367,15 +387,14 @@ a{color:inherit}a:hover{color:#AE1C52}
       </div>
       <div data-panel="2" hidden>
       <article class="pj" aria-labelledby="pj-h-2">
-        <div class="pj-media"><figure class="sh sh-scroll"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">quebeciptv.ca</span></div><div class="sh-win" style="height:420px" tabindex="0" aria-label="Full homepage of quebeciptv.ca, scrollable"><img src="assets/img/web-quebec-iptv.webp" alt="quebeciptv.ca — full homepage" width="1400" height="1837" loading="lazy"></div><span class="sh-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg> Scroll to see the full page</span></figure></div>
+        <div class="pj-media pj-duo"><figure class="sh sh-scroll"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">institutduseintanger.ma</span></div><div class="sh-win" style="height:540px" tabindex="0" aria-label="Full homepage of institutduseintanger.ma, scrollable"><img src="assets/img/web-institut-du-sein-full.webp" alt="institutduseintanger.ma full homepage" width="1440" height="10360" loading="lazy"></div><span class="sh-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg> Scroll to see the full page</span></figure><figure class="shm"><img src="assets/img/institut-du-sein/mobile-hero.webp" alt="Institut du Sein de Tanger on mobile" width="780" height="1688" loading="lazy"></figure></div>
         <div class="pj-info">
-          <div class="pj-top"><span class="pj-n">03 / 09</span><span class="pj-meta">IPTV service · Québec, Canada</span></div>
-          <h2 class="pj-h2" id="pj-h-2">Québec IPTV</h2>
+          <div class="pj-top"><span class="pj-n">03 / 05</span><span class="pj-meta">Medical clinic · Tangier, Morocco</span></div>
+          <h2 class="pj-h2" id="pj-h-2">Institut du Sein de Tanger</h2>
           <div class="pj-block"><span class="pj-lab">My role</span><p class="pj-role">Full website creation with WordPress &amp; Elementor: design, build and launch.</p></div>
-          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>Hero with Trustpilot rating</li><li>Key figures section</li><li>Free-trial section with clear call to action</li><li>Plans, setup guides and channel list</li></ul></div>
-          
+          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>Key-figures bar under the hero</li><li>7 treatments with a preview card</li><li>Doctor profile section</li><li>Expandable gynecological follow-up cards</li><li>One page per treatment, built for local SEO</li><li>Phone, WhatsApp and booking on every page</li></ul></div>
           <div class="pj-actions">
-            <a class="pj-link" href="https://quebeciptv.ca/" target="_blank" rel="nofollow noopener noreferrer">Visit quebeciptv.ca <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+            <div class="pj-cta"><a class="pj-case btn-gloss" href="institut-du-sein.html">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="pj-link" href="https://institutduseintanger.ma/" target="_blank" rel="nofollow noopener noreferrer">Visit institutduseintanger.ma <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
             <div class="pj-nav"><button type="button" class="pj-arrow" data-nav="prev" aria-label="Previous project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button><button type="button" class="pj-arrow" data-nav="next" aria-label="Next project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
           </div>
         </div>
@@ -383,15 +402,15 @@ a{color:inherit}a:hover{color:#AE1C52}
       </div>
       <div data-panel="3" hidden>
       <article class="pj" aria-labelledby="pj-h-3">
-        <div class="pj-media"><div class="pj-duo"><figure class="sh "><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">institutduseintanger.ma</span></div><img src="assets/img/web-institut-du-sein.webp" alt="institutduseintanger.ma — homepage" width="800" height="500" loading="lazy"></figure><figure class="shm"><img src="assets/img/web-institut-du-sein-mobile.webp" alt="Mobile version" width="750" height="1624" loading="lazy"></figure></div></div>
+        <div class="pj-media pj-duo"><figure class="sh sh-scroll"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">storeaccess.ma</span></div><div class="sh-win" style="height:540px" tabindex="0" aria-label="Full homepage of storeaccess.ma, scrollable"><img src="assets/img/web-store-access-full.webp" alt="storeaccess.ma full homepage" width="1440" height="4410" loading="lazy"></div><span class="sh-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg> Scroll to see the full page</span></figure><figure class="shm"><img src="assets/img/store-access/mobile-hero.webp" alt="Store Access on mobile" width="780" height="1688" loading="lazy"></figure></div>
         <div class="pj-info">
-          <div class="pj-top"><span class="pj-n">04 / 09</span><span class="pj-meta">Medical clinic · Tangier, Morocco</span></div>
-          <h2 class="pj-h2" id="pj-h-3">Institut du Sein de Tanger</h2>
-          <div class="pj-block"><span class="pj-lab">My role</span><p class="pj-role">Full website creation with WordPress &amp; Elementor: design, build and launch.</p></div>
-          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>Doctor presentation in the hero</li><li>“Request a consultation” button</li><li>Floating WhatsApp contact</li><li>Care pages written for patients</li></ul></div>
-          
+          <div class="pj-top"><span class="pj-n">04 / 05</span><span class="pj-meta">E-commerce · Morocco</span></div>
+          <h2 class="pj-h2" id="pj-h-3">Store Access</h2>
+          <div class="pj-block"><span class="pj-lab">My role</span><p class="pj-role">Store build with WordPress &amp; WooCommerce, and SEO.</p></div>
+          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>Category menu and product search in the header</li><li>Product grids with New / Featured / Best-seller tabs</li><li>Daily deals with “Add to quote”</li><li>SEO landing page for each category</li><li>WhatsApp contact on every page</li><li>Mobile store with Shop and Cart bar</li></ul></div>
+          <div class="pj-block"><span class="pj-lab">Result</span><div class="pj-res"><div><strong>×2.2</strong><span>monthly impressions in 12 months</span></div><div><strong>794</strong><span>queries in the top 10</span></div></div></div>
           <div class="pj-actions">
-            <a class="pj-link" href="https://institutduseintanger.ma/" target="_blank" rel="nofollow noopener noreferrer">Visit institutduseintanger.ma <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+            <div class="pj-cta"><a class="pj-case btn-gloss" href="store-access.html">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="pj-link" href="https://storeaccess.ma/" target="_blank" rel="nofollow noopener noreferrer">Visit storeaccess.ma <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
             <div class="pj-nav"><button type="button" class="pj-arrow" data-nav="prev" aria-label="Previous project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button><button type="button" class="pj-arrow" data-nav="next" aria-label="Next project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
           </div>
         </div>
@@ -399,79 +418,14 @@ a{color:inherit}a:hover{color:#AE1C52}
       </div>
       <div data-panel="4" hidden>
       <article class="pj" aria-labelledby="pj-h-4">
-        <div class="pj-media"><figure class="sh sh-scroll"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">talensio.ma</span></div><div class="sh-win" style="height:460px" tabindex="0" aria-label="Full homepage of talensio.ma, scrollable"><img src="assets/img/web-talensio.webp" alt="talensio.ma — full homepage" width="685" height="1014" loading="lazy"></div><span class="sh-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg> Scroll to see the full page</span></figure></div>
+        <div class="pj-media pj-duo"><figure class="sh sh-scroll"><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">iptvfromcanada.ca</span></div><div class="sh-win" style="height:540px" tabindex="0" aria-label="Full homepage of iptvfromcanada.ca, scrollable"><img src="assets/img/web-iptvfromcanada-full.webp" alt="iptvfromcanada.ca full homepage" width="1440" height="11854" loading="lazy"></div><span class="sh-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg> Scroll to see the full page</span></figure><figure class="shm"><img src="assets/img/iptv-from-canada/mobile-hero.webp" alt="IPTV from Canada on mobile" width="780" height="1688" loading="lazy"></figure></div>
         <div class="pj-info">
-          <div class="pj-top"><span class="pj-n">05 / 09</span><span class="pj-meta">Certified training · Morocco</span></div>
-          <h2 class="pj-h2" id="pj-h-4">Talensio</h2>
+          <div class="pj-top"><span class="pj-n">05 / 05</span><span class="pj-meta">IPTV service · Canada</span></div>
+          <h2 class="pj-h2" id="pj-h-4">IPTV from Canada</h2>
           <div class="pj-block"><span class="pj-lab">My role</span><p class="pj-role">Full website creation with WordPress &amp; Elementor: design, build and launch.</p></div>
-          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>Hero with search by training domain</li><li>Key figures counters</li><li>“Why choose us” section</li><li>Separate path for corporate programs</li></ul></div>
-          
+          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>Interactive plan builder (devices × duration)</li><li>3-step onboarding section</li><li>IPTV vs cable comparison table</li><li>Coast-to-coast coverage map</li><li>12 device setup guides</li><li>24-hour free trial and FAQ</li></ul></div>
           <div class="pj-actions">
-            <a class="pj-link" href="https://talensio.ma/" target="_blank" rel="nofollow noopener noreferrer">Visit talensio.ma <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
-            <div class="pj-nav"><button type="button" class="pj-arrow" data-nav="prev" aria-label="Previous project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button><button type="button" class="pj-arrow" data-nav="next" aria-label="Next project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
-          </div>
-        </div>
-      </article>
-      </div>
-      <div data-panel="5" hidden>
-      <article class="pj" aria-labelledby="pj-h-5">
-        <div class="pj-media"><figure class="sh "><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">modeiptv.ca</span></div><img src="assets/img/web-mode-iptv.webp" alt="modeiptv.ca — homepage" width="1400" height="620" loading="lazy"></figure></div>
-        <div class="pj-info">
-          <div class="pj-top"><span class="pj-n">06 / 09</span><span class="pj-meta">IPTV service · Canada</span></div>
-          <h2 class="pj-h2" id="pj-h-5">Mode IPTV</h2>
-          <div class="pj-block"><span class="pj-lab">My role</span><p class="pj-role">Full website creation with WordPress &amp; Elementor: design, build and launch.</p></div>
-          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>Hero with subscription and free-trial buttons</li><li>Plans and channel pages</li><li>Step-by-step setup guides</li></ul></div>
-          <div class="pj-block"><span class="pj-lab">Result</span><div class="pj-res"><div><strong>#1</strong><span>“mode iptv canada”</span></div><div><strong>3,678</strong><span>clicks in 28 days</span></div></div></div>
-          <div class="pj-actions">
-            <a class="pj-link" href="https://www.modeiptv.ca/" target="_blank" rel="nofollow noopener noreferrer">Visit modeiptv.ca <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
-            <div class="pj-nav"><button type="button" class="pj-arrow" data-nav="prev" aria-label="Previous project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button><button type="button" class="pj-arrow" data-nav="next" aria-label="Next project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
-          </div>
-        </div>
-      </article>
-      </div>
-      <div data-panel="6" hidden>
-      <article class="pj" aria-labelledby="pj-h-6">
-        <div class="pj-media"><figure class="sh "><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">nivelles-psychologue.be</span></div><img src="assets/img/web-nivelles.webp" alt="nivelles-psychologue.be — homepage" width="800" height="505" loading="lazy"></figure></div>
-        <div class="pj-info">
-          <div class="pj-top"><span class="pj-n">07 / 09</span><span class="pj-meta">Psychologists network · Nivelles, Belgium</span></div>
-          <h2 class="pj-h2" id="pj-h-6">Psychologue Nivelles</h2>
-          <div class="pj-block"><span class="pj-lab">My role</span><p class="pj-role">Full website creation with WordPress &amp; Elementor: design, build and launch.</p></div>
-          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>“Find a psychologist” search</li><li>Practitioner profiles</li><li>“Work with us” form for psychologists</li></ul></div>
-          
-          <div class="pj-actions">
-            <a class="pj-link" href="https://nivelles-psychologue.be/" target="_blank" rel="nofollow noopener noreferrer">Visit nivelles-psychologue.be <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
-            <div class="pj-nav"><button type="button" class="pj-arrow" data-nav="prev" aria-label="Previous project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button><button type="button" class="pj-arrow" data-nav="next" aria-label="Next project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
-          </div>
-        </div>
-      </article>
-      </div>
-      <div data-panel="7" hidden>
-      <article class="pj" aria-labelledby="pj-h-7">
-        <div class="pj-media"><figure class="sh "><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">psychologue-braine-lalleud.be</span></div><img src="assets/img/web-braine.webp" alt="psychologue-braine-lalleud.be — homepage" width="1400" height="657" loading="lazy"></figure></div>
-        <div class="pj-info">
-          <div class="pj-top"><span class="pj-n">08 / 09</span><span class="pj-meta">Psychologists network · Braine-l’Alleud, Belgium</span></div>
-          <h2 class="pj-h2" id="pj-h-7">Psychologue Braine-l’Alleud</h2>
-          <div class="pj-block"><span class="pj-lab">My role</span><p class="pj-role">Full website creation with WordPress &amp; Elementor: design, build and launch.</p></div>
-          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>“Find a psychologist” and “Are you a psychologist?” paths</li><li>Team profiles and therapy types</li><li>Practice addresses</li></ul></div>
-          
-          <div class="pj-actions">
-            <a class="pj-link" href="https://psychologue-braine-lalleud.be/" target="_blank" rel="nofollow noopener noreferrer">Visit psychologue-braine-lalleud.be <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
-            <div class="pj-nav"><button type="button" class="pj-arrow" data-nav="prev" aria-label="Previous project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button><button type="button" class="pj-arrow" data-nav="next" aria-label="Next project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
-          </div>
-        </div>
-      </article>
-      </div>
-      <div data-panel="8" hidden>
-      <article class="pj" aria-labelledby="pj-h-8">
-        <div class="pj-media"><figure class="sh "><div class="bw-bar"><i></i><i></i><i></i><span class="bw-url">psychologue-flemalle.be</span></div><img src="assets/img/web-flemalle.webp" alt="psychologue-flemalle.be — homepage" width="800" height="505" loading="lazy"></figure></div>
-        <div class="pj-info">
-          <div class="pj-top"><span class="pj-n">09 / 09</span><span class="pj-meta">Psychologist · Flémalle, Belgium</span></div>
-          <h2 class="pj-h2" id="pj-h-8">Psychologue Flémalle</h2>
-          <div class="pj-block"><span class="pj-lab">My role</span><p class="pj-role">Full website creation with WordPress &amp; Elementor: design, build and launch.</p></div>
-          <div class="pj-block"><span class="pj-lab">What I built</span><ul class="pj-list"><li>Consultation and psychotherapy pages</li><li>FAQ and directions</li><li>Online booking</li></ul></div>
-          
-          <div class="pj-actions">
-            <a class="pj-link" href="https://psychologue-flemalle.be/" target="_blank" rel="nofollow noopener noreferrer">Visit psychologue-flemalle.be <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+            <div class="pj-cta"><a class="pj-case btn-gloss" href="iptv-from-canada.html">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="pj-link" href="https://iptvfromcanada.ca/" target="_blank" rel="nofollow noopener noreferrer">Visit iptvfromcanada.ca <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div>
             <div class="pj-nav"><button type="button" class="pj-arrow" data-nav="prev" aria-label="Previous project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button><button type="button" class="pj-arrow" data-nav="next" aria-label="Next project"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
           </div>
         </div>
@@ -481,7 +435,7 @@ a{color:inherit}a:hover{color:#AE1C52}
 
   <!-- CONTACT (same as Home) -->
   <section id="contact" style="padding: 0 clamp(12px, 2vw, 24px) 24px; margin-top: clamp(80px, 9vw, 128px)">
-    <div style="position: relative; max-width: 1360px; margin: 0 auto; box-sizing: border-box; background: #0A0A0A; color: #F7F7F7; border-radius: 32px; overflow: hidden; padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 56px); min-height: 460px; display: flex; align-items: center">
+    <div style="position: relative; max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; background: #0A0A0A; color: #F7F7F7; border-radius: 32px; overflow: hidden; padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 56px); min-height: 460px; display: flex; align-items: center">
       <div class="float" style="position: absolute; z-index: 0; right: -14%; top: -30%; width: 72%; aspect-ratio: 4 / 3; pointer-events: none">
         <img src="assets/img/veil-contact.webp" alt="" style="width: 100%; height: 100%; display: block">
       </div>
@@ -502,7 +456,7 @@ a{color:inherit}a:hover{color:#AE1C52}
     </div>
   </section>
 
-  <footer style="max-width: 1360px; margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px) 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #6B5A64">
+  <footer style="max-width: var(--wrap); margin: 0 auto; box-sizing: border-box; padding: 20px clamp(20px, 4vw, 56px) 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #6B5A64">
     <span>© 2026 Khadija EL AZIZI · SEO Specialist &amp; Web Designer</span>
     <span>Tangier, Morocco</span>
   </footer>
@@ -524,5 +478,17 @@ a{color:inherit}a:hover{color:#AE1C52}
   });
 })();
 </script>
+<script>
+(function(){
+  document.querySelectorAll('.nav-dd').forEach(function(dd){
+    var btn=dd.querySelector('.nav-dd-btn');
+    var menu=dd.querySelector('.nav-dd-menu');
+    btn.addEventListener('click',function(e){ e.stopPropagation(); var o=dd.classList.toggle('open'); btn.setAttribute('aria-expanded',o?'true':'false'); menu.style.top=innerWidth<=760?(dd.getBoundingClientRect().bottom+12)+'px':''; });
+    document.addEventListener('click',function(e){ if(!dd.contains(e.target)){ dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
+    dd.addEventListener('keydown',function(e){ if(e.key==='Escape'){ dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.focus(); } });
+  });
+})();
+</script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>
