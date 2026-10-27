@@ -64,4 +64,20 @@
   btn.addEventListener('click', function(){ var o = box.classList.toggle('open'); box.classList.add('seen'); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); });
   document.addEventListener('click', function(e){ if (!box.contains(e.target)) { box.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { box.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+  // Zoomable images: any [data-zoom] element opens a full-size viewer
+  var zItems = [].slice.call(document.querySelectorAll('[data-zoom]'));
+  if (zItems.length) {
+    var Z = FR ? { close: 'Fermer', prev: 'Image précédente', next: 'Image suivante', dlg: 'Capture en grand' } : { close: 'Close', prev: 'Previous image', next: 'Next image', dlg: 'Full-size screenshot' };
+    var ico = function(d){ return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + d + '"/></svg>'; };
+    var zb = document.createElement('div'); zb.className = 'zoom'; zb.setAttribute('role', 'dialog'); zb.setAttribute('aria-modal', 'true'); zb.setAttribute('aria-label', Z.dlg);
+    zb.innerHTML = '<div class="zoom-top"><span><b></b><small></small></span><span class="zoom-btns"><button type="button" data-z="-1" aria-label="' + Z.prev + '">' + ico('M15 6l-6 6 6 6') + '</button><button type="button" data-z="1" aria-label="' + Z.next + '">' + ico('M9 6l6 6-6 6') + '</button><button type="button" data-z="x" aria-label="' + Z.close + '">' + ico('M6 6l12 12M18 6L6 18') + '</button></span></div><div class="zoom-view"><img alt=""></div>';
+    document.body.appendChild(zb);
+    var zImg = zb.querySelector('img'), zView = zb.querySelector('.zoom-view'), zCur = 0, zLast = null;
+    var zShow = function(i){ zCur = (i + zItems.length) % zItems.length; var el = zItems[zCur]; var ti = el.querySelector('img'); zImg.src = el.getAttribute('data-zoom') || (ti ? ti.currentSrc || ti.src : ''); zImg.alt = ti ? ti.alt : ''; var cb = el.querySelector('.zg-cap b, .lp-cap b'), cs = el.querySelector('.zg-cap small, .lp-cap small'); zb.querySelector('b').textContent = cb ? cb.textContent : ''; zb.querySelector('small').textContent = cs ? cs.textContent : ''; zView.scrollTop = 0; };
+    var zOpen = function(i){ zLast = document.activeElement; zShow(i); zb.classList.add('open'); document.body.classList.add('zoom-open'); zb.querySelector('[data-z="x"]').focus(); };
+    var zClose = function(){ zb.classList.remove('open'); document.body.classList.remove('zoom-open'); if (zLast) zLast.focus(); };
+    zItems.forEach(function(el, i){ el.addEventListener('click', function(e){ e.preventDefault(); zOpen(i); }); });
+    zb.addEventListener('click', function(e){ var b = e.target.closest('[data-z]'); if (b) { if (b.getAttribute('data-z') === 'x') zClose(); else zShow(zCur + (+b.getAttribute('data-z'))); } else if (e.target === zView) zClose(); });
+    document.addEventListener('keydown', function(e){ if (!zb.classList.contains('open')) return; if (e.key === 'Escape') zClose(); else if (e.key === 'ArrowRight') zShow(zCur + 1); else if (e.key === 'ArrowLeft') zShow(zCur - 1); });
+  }
 })();
